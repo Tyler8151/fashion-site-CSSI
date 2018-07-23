@@ -17,3 +17,27 @@ h2 {
   background-repeat: no-repeat;
   padding: 100px 100px;
 }
+
+#aero {
+  background: url('/images/aeropostale.svg.png');
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 100px;
+}
+
+#AE {
+  background: url('/images/americaneagle.svg.png');
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 100px;
+}
+
+#AA {
+  background: url('/images/americanapparel.png');
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 100px;
+}
