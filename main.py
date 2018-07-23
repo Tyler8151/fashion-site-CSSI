@@ -33,8 +33,13 @@ class AeroPage(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='/images/aeropostale.svg.png'
+
+
+
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
+
+        
 
 class AmerEaglePage(webapp2.RequestHandler):
     def get(self):
@@ -205,7 +210,7 @@ class ZaraPage(webapp2.RequestHandler):
         self.response.write(home_template.render(title_dict))
 
 class AboutPage(webapp2.RequestHandler):
-    def post(self):
+    def get(self):
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render())
 
