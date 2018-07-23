@@ -159,6 +159,16 @@ class ZaraPage(webapp2.RequestHandler):
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
 
+class AboutPage(webapp2.RequestHandler):
+    def post(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render())
+
+class ConPage(webapp2.RequestHandler):
+    def post(self):
+        con_template= jinja_current_directory.get_template('templates/contact.html')
+        self.response.write(home_template.render())
+
 
 
 app = webapp2.WSGIApplication([
@@ -178,5 +188,7 @@ app = webapp2.WSGIApplication([
     ('/OldNavy',OldPage),
     ('/Uniqlo',UnPage),
     ('/UrbanOutFitters',UrbPage),
-    ('/Zara',ZaraPage)
+    ('/Zara',ZaraPage),
+    ('/about',AboutPage),
+    ('/contact',ConPage)
 ], debug=True)
