@@ -10,34 +10,38 @@ h2 {
   font-size: 20px;
 }
 
-#hm {
-  background: url('/images/hm-logo.png');
+#stores {
+  justify-content: space-between;
+  display: flex;
+  width: 700px;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.store button {
   background-size: 80%;
   background-position: center;
   background-repeat: no-repeat;
   padding: 100px 100px;
+  margin-top: 30px;
+}
+
+#hm {
+  background-image: url('/images/hm-logo.png');
 }
 
 #aero {
-  background: url('/images/aeropostale.svg.png');
-  background-size: 80%;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 100px 100px;
+  background-image: url('/images/aeropostale.svg.png');
 }
 
 #AE {
-  background: url('/images/americaneagle.svg.png');
-  background-size: 80%;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 100px 100px;
+  background-image: url('/images/americaneagle.svg.png');
 }
 
 #AA {
-  background: url('/images/americanapparel.png');
-  background-size: 80%;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 100px 100px;
+  background-image: url('/images/americanapparel.png');
+}
+
+#holl {
+  background-image: url('/images/');
 }
