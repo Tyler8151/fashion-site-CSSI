@@ -1,4 +1,5 @@
-div {
+#all,
+#all div {
   height: auto;
   width: auto;
   background-color: white;
@@ -7,6 +8,7 @@ div {
   border: 35px;
   border-color: white;
   padding: 15px;
+  align-content: space-around;
 
 }
 
@@ -29,4 +31,10 @@ label{
   font-family: "Palatino", serif;
   font-size: 15px;
   margin-top: 0px;
+}
+
+#info {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
