@@ -8,14 +8,13 @@ jinja_current_directory = jinja2.Environment(
     extensions = ['jinja2.ext.autoescape'],
     autoescape = True)
 
-
+title_dict={'title': ""}
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
         main_template= jinja_current_directory.get_template('templates/homepg.html')
         self.response.write(main_template.render())
-
-
+        title="test"
 class LogPage(webapp2.RequestHandler):
     def post(self):
         log= jinja_current_directory.get_template('templates/log-out.html')
@@ -23,6 +22,7 @@ class LogPage(webapp2.RequestHandler):
 
 class AeroPage(webapp2.RequestHandler):
     def post(self):
+
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render())
 class AmerEaglePage(webapp2.RequestHandler):
