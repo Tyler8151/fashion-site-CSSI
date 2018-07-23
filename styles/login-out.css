@@ -1,6 +1,12 @@
 div {
-  height: 100px;
-  width: 100px;
+  height: auto;
+  width: auto;
+  background-color: white;
+  border-radius: 15px;
+  margin: 30px;
+  border: 35px;
+  border-color: white;
+  padding: 15px;
 
 }
 
@@ -8,4 +14,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+label{
+  font-family: "Palatino", serif;
+  color: black;
+}
+
+#heading{
+  text-align: center;
+  font-family: "Palatino", serif;
+  font-size: 15px;
+  margin-top: 0px;
 }
