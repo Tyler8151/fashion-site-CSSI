@@ -8,77 +8,91 @@ jinja_current_directory = jinja2.Environment(
     extensions = ['jinja2.ext.autoescape'],
     autoescape = True)
 
-
+title_dict={'title': "test"}
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
-        main_template= jinja_current_directory.get_template('templates/homepg.html')
-        self.response.write(main_template.render())
 
+        main_template= jinja_current_directory.get_template('templates/homepg.html')
+        self.response.write(main_template.render(title_dict))
 
 class LogPage(webapp2.RequestHandler):
     def post(self):
         log= jinja_current_directory.get_template('templates/log-out.html')
         self.response.write(log_template.render())
-
 class AeroPage(webapp2.RequestHandler):
     def post(self):
+        title_dict['title']='Aeropostale'
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render())
 class AmerEaglePage(webapp2.RequestHandler):
     def post(self):
+        title_dict['title']='American Eagle'
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render())
 class AmerApparelPage(webapp2.RequestHandler):
     def post(self):
+        title_dict['title']='American Apparel'
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render())
 class BananaPage(webapp2.RequestHandler):
     def post(self):
+        title_dict['title']='Banana Republic'
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render())
 class BloomPage(webapp2.RequestHandler):
     def post(self):
+        title_dict['title']='Bloomingdales'
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render())
 class ExpressPage(webapp2.RequestHandler):
     def post(self):
+        title_dict['title']='Express'
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render())
 class F21Page(webapp2.RequestHandler):
     def get(self):
+        title_dict['title']='Forever 21'
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render())
 class GapPage(webapp2.RequestHandler):
     def post(self):
+        title_dict['title']='Gap'
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render())
 class HMPage(webapp2.RequestHandler):
     def post(self):
+        title_dict['title']='H&M'
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render())
 class HollPage(webapp2.RequestHandler):
     def post(self):
+        title_dict['title']='Hollister'
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render())
 class LuluPage(webapp2.RequestHandler):
     def post(self):
+        title_dict['title']='LuluLemon'
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render())
 class OldPage(webapp2.RequestHandler):
     def post(self):
+        title_dict['title']='Old Navy'
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render())
 class UnPage(webapp2.RequestHandler):
     def post(self):
+        title_dict['title']='Uniqlo'
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render())
 class UrbPage(webapp2.RequestHandler):
     def post(self):
+        title_dict['title']='Urban Outfitters'
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render())
 class ZaraPage(webapp2.RequestHandler):
     def post(self):
+        title_dict['title']='Zara'
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render())
 
