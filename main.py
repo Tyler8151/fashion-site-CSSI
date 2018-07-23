@@ -10,6 +10,10 @@ jinja_current_directory = jinja2.Environment(
     autoescape = True)
 
 title_dict={'title': "", "desc": "",'opinion': "", 'logo': "" }
+comment_query = Comment.query().fetch()
+comment_dict = {
+        'all_comments': comment_query,
+        }
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
