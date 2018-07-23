@@ -25,6 +25,9 @@ class LogPage(webapp2.RequestHandler):
         self.response.write(log_template.render())
 
 class AeroPage(webapp2.RequestHandler):
+    def get(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render(title_dict))
     def post(self):
         title_dict['title']='Aeropostale'
         title_dict['desc']='This part of the webiste will contain the description of the brand'
@@ -34,6 +37,9 @@ class AeroPage(webapp2.RequestHandler):
         self.response.write(home_template.render(title_dict))
 
 class AmerEaglePage(webapp2.RequestHandler):
+    def get(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render(title_dict))
     def post(self):
         title_dict['title']='American Eagle'
         title_dict['desc']='This part of the webiste will contain the description of the brand'
@@ -43,6 +49,9 @@ class AmerEaglePage(webapp2.RequestHandler):
         self.response.write(home_template.render(title_dict))
 
 class AmerApparelPage(webapp2.RequestHandler):
+    def get(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render(title_dict))
     def post(self):
         title_dict['title']='American Apparel'
         title_dict['desc']='This part of the webiste will contain the description of the brand'
@@ -52,6 +61,9 @@ class AmerApparelPage(webapp2.RequestHandler):
         self.response.write(home_template.render(title_dict))
 
 class BananaPage(webapp2.RequestHandler):
+    def get(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render(title_dict))
     def post(self):
         title_dict['title']='Banana Republic'
         title_dict['desc']='This part of the webiste will contain the description of the brand'
@@ -61,6 +73,9 @@ class BananaPage(webapp2.RequestHandler):
         self.response.write(home_template.render(title_dict))
 
 class BloomPage(webapp2.RequestHandler):
+    def get(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render(title_dict))
     def post(self):
         title_dict['title']='Bloomingdales'
         title_dict['desc']='This part of the webiste will contain the description of the brand'
@@ -70,6 +85,9 @@ class BloomPage(webapp2.RequestHandler):
         self.response.write(home_template.render(title_dict))
 
 class ExpressPage(webapp2.RequestHandler):
+    def get(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render(title_dict))
     def post(self):
         title_dict['title']='Express'
         title_dict['desc']='This part of the webiste will contain the description of the brand'
@@ -79,6 +97,9 @@ class ExpressPage(webapp2.RequestHandler):
         self.response.write(home_template.render(title_dict))
 
 class F21Page(webapp2.RequestHandler):
+    def get(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render(title_dict))
     def post(self):
         title_dict['title']='Forever 21'
         title_dict['desc']='This part of the webiste will contain the description of the brand'
@@ -88,6 +109,9 @@ class F21Page(webapp2.RequestHandler):
         self.response.write(home_template.render(title_dict))
 
 class GapPage(webapp2.RequestHandler):
+    def get(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render(title_dict))
     def post(self):
         title_dict['title']='Gap'
         title_dict['desc']='This part of the webiste will contain the description of the brand'
@@ -97,6 +121,9 @@ class GapPage(webapp2.RequestHandler):
         self.response.write(home_template.render(title_dict))
 
 class HMPage(webapp2.RequestHandler):
+    def get(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render(title_dict))
     def post(self):
         title_dict['title']='H&M'
         title_dict['desc']='This part of the webiste will contain the description of the brand'
@@ -106,6 +133,9 @@ class HMPage(webapp2.RequestHandler):
         self.response.write(home_template.render(title_dict))
 
 class HollPage(webapp2.RequestHandler):
+    def get(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render(title_dict))
     def post(self):
         title_dict['title']='Hollister'
         title_dict['desc']='This part of the webiste will contain the description of the brand'
@@ -115,6 +145,9 @@ class HollPage(webapp2.RequestHandler):
         self.response.write(home_template.render(title_dict))
 
 class LuluPage(webapp2.RequestHandler):
+    def get(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render(title_dict))
     def post(self):
         title_dict['title']='LuluLemon'
         title_dict['desc']='This part of the webiste will contain the description of the brand'
@@ -124,6 +157,9 @@ class LuluPage(webapp2.RequestHandler):
         self.response.write(home_template.render(title_dict))
 
 class OldPage(webapp2.RequestHandler):
+    def get(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render(title_dict))
     def post(self):
         title_dict['title']='Old Navy'
         title_dict['desc']='This part of the webiste will contain the description of the brand'
@@ -133,6 +169,9 @@ class OldPage(webapp2.RequestHandler):
         self.response.write(home_template.render(title_dict))
 
 class UnPage(webapp2.RequestHandler):
+    def get(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render(title_dict))
     def post(self):
         title_dict['title']='Uniqlo'
         title_dict['desc']='This part of the webiste will contain the description of the brand'
@@ -142,6 +181,9 @@ class UnPage(webapp2.RequestHandler):
         self.response.write(home_template.render(title_dict))
 
 class UrbPage(webapp2.RequestHandler):
+    def get(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render(title_dict))
     def post(self):
         title_dict['title']='Urban Outfitters'
         title_dict['desc']='This part of the webiste will contain the description of the brand'
@@ -152,6 +194,9 @@ class UrbPage(webapp2.RequestHandler):
 
 class ZaraPage(webapp2.RequestHandler):
     def get(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render(title_dict))
+    def post(self):
         title_dict['title']='Zara'
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
