@@ -100,7 +100,7 @@ class ZaraPage(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', HomePage),
     ('/log',LogPage),
-    ('/aero',AeroPage),
+    ('/Aeropostale',AeroPage),
     ('/AmericanEagle',AmerEaglePage),
     ('/AmericanApparel',AmerApparelPage),
     ('/BananaRepublic',BananaPage),
