@@ -1,7 +1,13 @@
+
+
 h1 {
   text-align: center;
   font-family: "Palatino", serif;
   font-size: 30px;
+  margin-left: 0;
+  margin-right: 0;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 h2 {
@@ -77,10 +83,12 @@ h2 {
 
 #Un {
   background-image: url('/images/uni.png');
+  background-size: 65%;
 }
 
 #urb {
   background-image: url('/images/urb.png');
+  background-size: 110%;
 }
 
 #zara {
