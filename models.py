@@ -2,9 +2,11 @@ from google.appengine.ext import ndb
 
 class User(ndb.Model):
     user_name = ndb.StringProperty(required=True)
-    comment = ndb.FloatProperty(required=True)
+    real_name = ndb.StringProperty(required=True)
+    email = ndb.StringProperty(required=True)
+    password = ndb.StringProperty()
 
-
-class Store(ndb.Model):
-    title = ndb.StringProperty()
-    url = ndb.StringProperty()
+class Comment():
+    #user = ndb.StringProperty
+    content = ndb.StringProperty(required=True)
+    brand = ndb.StringProperty(required=True)
