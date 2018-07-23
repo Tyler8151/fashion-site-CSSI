@@ -151,7 +151,7 @@ class UrbPage(webapp2.RequestHandler):
         self.response.write(home_template.render(title_dict))
 
 class ZaraPage(webapp2.RequestHandler):
-    def post(self):
+    def get(self):
         title_dict['title']='Zara'
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
@@ -165,9 +165,9 @@ class AboutPage(webapp2.RequestHandler):
         self.response.write(home_template.render())
 
 class ConPage(webapp2.RequestHandler):
-    def post(self):
+    def get(self):
         con_template= jinja_current_directory.get_template('templates/contact.html')
-        self.response.write(home_template.render())
+        self.response.write(con_template.render())
 
 
 
