@@ -12,7 +12,13 @@ jinja_current_directory = jinja2.Environment(
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
-        home_template= jinja_current_directory.get_template('homepg/welcome.html')
+        home_template= jinja_current_directory.get_template('templates/homepg.html')
+        self.response.write(home_template.render())
+
+
+class LogPage(webapp2.RequestHandler):
+    def post(self):
+        log= jinja_current_directory.get_template('templates/log-out.html')
         self.response.write(home_template.render())
 
 
@@ -21,5 +27,16 @@ class HomePage(webapp2.RequestHandler):
 
 
 app = webapp2.WSGIApplication([
-    ('/', HomePage)
+    ('/', HomePage),
+    ('/log',LogPage),
+    ('/h&m',HMPage),
+    ('/aero',AeroPage),
+    ('/AmericanEagle',AmerEaglePage),
+    ('/AmericanApparel',AmerApparelPage),
+    ('/BananaRepublic',BananaPage),
+    ('/Bloomingdales'BloomPage),
+    ('/Express',ExpressPage),
+    ('/Forever21',F21Page),
+    ('/Gap',GapPage),
+    ('/H')
 ], debug=True)
