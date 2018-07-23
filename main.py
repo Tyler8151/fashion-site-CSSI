@@ -17,7 +17,7 @@ class HomePage(webapp2.RequestHandler):
 
 class LogPage(webapp2.RequestHandler):
     def post(self):
-        log= jinja_current_directory.get_template('templates/log-out.html')
+        log_template = jinja_current_directory.get_template('templates/log-out.html')
         self.response.write(log_template.render())
 class AeroPage(webapp2.RequestHandler):
     def post(self):

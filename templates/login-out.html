@@ -7,12 +7,24 @@
   </head>
   <body>
     <div>
+    <div>
       <label> Sign In</label><br>
-      <input type='text'> <br>
-
-      <label>Sign Up</label><br>
-      <input type='text'>
+      <input type='text' value='username'> <br>
+      <input type='text' value='password'><br>
+      <form method='post' action='/log'>
+        <input type='button' class='button' value='Submit'>
+      </form>
     </div>
-
+    <div>
+      <label>Sign Up</label><br>
+      <input type='text' value='name'> <br>
+      <input type='text' value='username'><br>
+      <input type='text' value='email'><br>
+      <input type='text' value='password'><br>
+      <form method='post' action='/'>
+        <input type='button' class='button' value='Submit'>
+      </form>
+    </div>
+    </div>
   </body>
 </html>

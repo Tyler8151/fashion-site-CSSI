@@ -1,6 +1,12 @@
 div {
-  height: 100px;
-  width: 100px;
+  height: auto;
+  width: auto;
+  background-color: gray;
+  border-radius: 15px;
+  margin: 50px;
+  border: 25px;
+  border-color: white;
+  padding: 15px;
 
 }
 
@@ -8,4 +14,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+label{
+  color: white;
 }
