@@ -6,7 +6,7 @@ class User(ndb.Model):
     email = ndb.StringProperty(required=True)
     password = ndb.StringProperty()
 
-class Comment():
+class Comment(ndb.Model):
     #user = ndb.StringProperty
     content = ndb.StringProperty(required=True)
     brand = ndb.StringProperty(required=True)

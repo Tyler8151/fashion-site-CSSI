@@ -2,6 +2,7 @@ import jinja2
 import os
 import webapp2
 from models import User
+from models import Comment
 
 jinja_current_directory = jinja2.Environment(
     loader = jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -38,12 +39,15 @@ class AeroPage(webapp2.RequestHandler):
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='/images/aeropostale.svg.png'
 
+        comment = self.request.get('comment')
 
+        aero_comment = Comment(content=comment, brand='Aeropostale')
+        aero_comment.put()
 
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
 
-        
+
 
 class AmerEaglePage(webapp2.RequestHandler):
     def get(self):
