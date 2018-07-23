@@ -62,6 +62,10 @@ class AmerEaglePage(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/americaneagle.svg.png'
+
+        amerEagle_comment = Comment(content=comment, brand='American Eagle')
+        amerEagle_comment.put()
+
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
 
@@ -78,6 +82,10 @@ class AmerApparelPage(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/americanapparel.png'
+
+        amerApparel_comment = Comment(content=comment, brand='American Apparel')
+        amerApparel_comment.put()
+
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
 
@@ -94,6 +102,10 @@ class BananaPage(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/banana.png'
+
+        banana_comment = Comment(content=comment, brand='Banana Republic')
+        banana_comment.put()
+
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
 
@@ -110,6 +122,10 @@ class BloomPage(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/bloom.png'
+
+        bloom_comment = Comment(content=comment, brand='Bloomingdales')
+        bloom_comment.put()
+
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
 
@@ -126,6 +142,10 @@ class ExpressPage(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/express.png'
+
+        exp_comment = Comment(content=comment, brand='Express')
+        exp_comment.put()
+
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
 
@@ -142,6 +162,10 @@ class F21Page(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/f21.png'
+
+        f21_comment = Comment(content=comment, brand='Forever 21')
+        f21_comment.put()
+
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
 
@@ -151,6 +175,10 @@ class GapPage(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/gap.png'
+
+        gap_comment = Comment(content=comment, brand='Gap')
+        gap_comment.put()
+
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
     def post(self):
