@@ -23,6 +23,7 @@ class LogPage(webapp2.RequestHandler):
     def post(self):
         log_template= jinja_current_directory.get_template('templates/login-out.html')
         self.response.write(log_template.render())
+
 class AeroPage(webapp2.RequestHandler):
     def post(self):
         title_dict['title']='Aeropostale'
