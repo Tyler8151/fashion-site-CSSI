@@ -23,7 +23,8 @@ h2 {
   background-position: center;
   background-repeat: no-repeat;
   padding: 100px 100px;
-  margin-top: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 #hm {
@@ -43,5 +44,45 @@ h2 {
 }
 
 #holl {
-  background-image: url('/images/');
+  background-image: url('/images/hollister.png');
+}
+
+#banana {
+  background-image: url('/images/banana.png');
+}
+
+#bloom {
+  background-image: url('/images/bloom.png');
+}
+
+#exp {
+  background-image: url('/images/express.png');
+}
+
+#f21 {
+  background-image: url('/images/f21.png');
+}
+
+#Gap {
+  background-image: url('/images/gap.png');
+}
+
+#Lulu {
+  background-image: url('/images/lulu.png');
+}
+
+#old {
+  background-image: url('/images/old.png');
+}
+
+#Un {
+  background-image: url('/images/uni.png');
+}
+
+#urb {
+  background-image: url('/images/urb.png');
+}
+
+#zara {
+  background-image: url('/images/zara.png');
 }
