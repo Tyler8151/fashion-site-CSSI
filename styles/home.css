@@ -1,7 +1,13 @@
-
+#loginout {
+  display: flex;
+  padding: 0;
+  background: none;
+  border: none;
+}
 
 h1 {
   text-align: center;
+  flex: 0 0 0;
   font-family: "Palatino", serif;
   font-size: 30px;
   margin-left: 0;
