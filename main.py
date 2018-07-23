@@ -15,9 +15,13 @@ class HomePage(webapp2.RequestHandler):
         main_template= jinja_current_directory.get_template('templates/homepg.html')
         self.response.write(main_template.render(title_dict))
 
+    def post(self):
+        main_template= jinja_current_directory.get_template('templates/homepg.html')
+        self.response.write(main_template.render(title_dict))
+
 class LogPage(webapp2.RequestHandler):
     def post(self):
-        log_template = jinja_current_directory.get_template('templates/log-out.html')
+        log_template = jinja_current_directory.get_template('templates/login-out.html')
         self.response.write(log_template.render())
 class AeroPage(webapp2.RequestHandler):
     def post(self):
