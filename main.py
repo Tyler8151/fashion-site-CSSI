@@ -12,24 +12,81 @@ jinja_current_directory = jinja2.Environment(
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
-        home_template= jinja_current_directory.get_template('templates/homepg.html')
-        self.response.write(home_template.render())
+        main_template= jinja_current_directory.get_template('templates/homepg.html')
+        self.response.write(main_template.render())
 
 
 class LogPage(webapp2.RequestHandler):
     def post(self):
         log= jinja_current_directory.get_template('templates/log-out.html')
+        self.response.write(log_template.render())
+
+class AeroPage(webapp2.RequestHandler):
+    def post(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render())
-
-
-
+class AmerEaglePage(webapp2.RequestHandler):
+    def post(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render())
+class AmerApparelPage(webapp2.RequestHandler):
+    def post(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render())
+class BananaPage(webapp2.RequestHandler):
+    def post(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render())
+class BloomPage(webapp2.RequestHandler):
+    def post(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render())
+class ExpressPage(webapp2.RequestHandler):
+    def post(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render())
+class F21Page(webapp2.RequestHandler):
+    def get(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render())
+class GapPage(webapp2.RequestHandler):
+    def post(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render())
+class HMPage(webapp2.RequestHandler):
+    def post(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render())
+class HollPage(webapp2.RequestHandler):
+    def post(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render())
+class LuluPage(webapp2.RequestHandler):
+    def post(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render())
+class OldPage(webapp2.RequestHandler):
+    def post(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render())
+class UnPage(webapp2.RequestHandler):
+    def post(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render())
+class UrbPage(webapp2.RequestHandler):
+    def post(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render())
+class ZaraPage(webapp2.RequestHandler):
+    def post(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render())
 
 
 
 app = webapp2.WSGIApplication([
     ('/', HomePage),
     ('/log',LogPage),
-    ('/h&m',HMPage),
     ('/aero',AeroPage),
     ('/AmericanEagle',AmerEaglePage),
     ('/AmericanApparel',AmerApparelPage),
@@ -38,5 +95,11 @@ app = webapp2.WSGIApplication([
     ('/Express',ExpressPage),
     ('/Forever21',F21Page),
     ('/Gap',GapPage),
-    ('/H')
+    ('/H&M',HMPage),
+    ('/Hollister',HollPage),
+    ('LuluLemon',LuluPage),
+    ('/OldNavy',OldPage),
+    ('/Uniqlo',UnPage),
+    ('/UrbanOutFitters',UrbPage),
+    ('/Zara',ZaraPage)
 ], debug=True)
