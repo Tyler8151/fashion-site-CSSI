@@ -12,7 +12,6 @@ title_dict={'title': "test"}
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
-
         main_template= jinja_current_directory.get_template('templates/homepg.html')
         self.response.write(main_template.render(title_dict))
 
