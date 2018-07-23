@@ -91,7 +91,7 @@ app = webapp2.WSGIApplication([
     ('/AmericanEagle',AmerEaglePage),
     ('/AmericanApparel',AmerApparelPage),
     ('/BananaRepublic',BananaPage),
-    ('/Bloomingdales'BloomPage),
+    ('/Bloomingdales',BloomPage),
     ('/Express',ExpressPage),
     ('/Forever21',F21Page),
     ('/Gap',GapPage),
