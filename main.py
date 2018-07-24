@@ -9,7 +9,9 @@ jinja_current_directory = jinja2.Environment(
     extensions = ['jinja2.ext.autoescape'],
     autoescape = True)
 
-title_dict={'title': "", "desc": "",'opinion': "", 'logo': "" }
+comment_query = Comment.query().fetch()
+
+title_dict={'title': "", "desc": "",'opinion': "", 'logo': "", 'all_comments': comment_query }
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
@@ -359,7 +361,7 @@ class ZaraPage(webapp2.RequestHandler):
         title_dict['logo']='images/zara.png'
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
-        
+
     def post(self):
         title_dict['title']='Zara'
         title_dict['desc']='This part of the webiste will contain the description of the brand'
