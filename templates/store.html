@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link href='styles/store.css' rel='stylesheet'>
-  </head>
-  <body>
-    <form method='post' action='/'>
-      <input type='submit' value='back'>
-    </form>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href='styles/store.css' rel='stylesheet'>
+</head>
+<body>
+  <form method='post' action='/'>
+    <input type='submit' value='back'>
     <h1><img id= "a1" src="{{logo}}"></h1>
-</form>
+  </form>
 
-    <h2> About {{title}} </h2>
-    <p id="desc">{{desc}}</p>
+  <h2> About {{title}} </h2>
+  <p id="desc">{{desc}}</p>
 
-    <h2> SA's Opinion</h2>
-    <h3><img id="logo" src="/images/salogo.png">   {{opinion}}</h3>
+  <h2> SA's Opinion</h2>
+  <h3><img id="logo" src="/images/salogo.png">   {{opinion}}</h3>
 
-    {% for comment in all_comments %}
-        <p>{{comment.content}}</p>
-    {% endfor %}
+  {% for comment in all_comments %}
+  <p>{{comment.content}}</p>
+  {% endfor %}
+  <a href="http://www2.hm.com//en_us/productpage.0619580006.html" title="Wide-cut Shorts" class="product-item-link">
+    <img width="222" height="333" src="//lp2.hm.com/hmgoepprod?set=source[/e9/fc/e9fcdb07e8ddf825b159ebab0d373e2e16b77a1c.jpg],origin[dam],category[ladies_shorts],type[DESCRIPTIVESTILLLIFE],hmver[1]&amp;call=url[file:/product/style]" class="product-item-image swipe-expose-item-image" alt="Wide-cut Shorts">
+  </a>
+  <a href="http://www2.hm.com/en_us/productpage.0653687001.html" title="Sneakers" class="product-item-link">
+    <img width="222" height="333" src="//lp2.hm.com/hmgoepprod?set=source[/0e/2c/0e2c156028a83c6876b7ec5ac1fab265a8b48bab.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],hmver[1]&amp;call=url[file:/product/style]" class="product-item-image swipe-expose-item-image" alt="Sneakers">
 
-    <form method='post'>
-      <input type='text' name='comment'>
-      <input type='submit'>
-    </form>
 
-  </body>
+  </a>
+  <a href="http://www2.hm.com/en_us/productpage.0631735001.html" title="Bib Overall Dress" class="product-item-link"> 
+    <img width="222" height="333" src="//lp2.hm.com/hmgoepprod?set=source[/8a/5c/8a5c6a561d73203b2b0b8c6faf5018583a34ccb9.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],hmver[1]&amp;call=url[file:/product/style]" class="product-item-image swipe-expose-item-image" alt="Bib Overall Dress">
+
+
+
+  </a>
+  <form method='post'>
+    <input type="text" name="comment" value='write a comment...'>
+    <input type='submit'>
+  </form>
+</body>
 </html>
