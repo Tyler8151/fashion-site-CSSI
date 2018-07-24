@@ -200,7 +200,9 @@ class GapPage(webapp2.RequestHandler):
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/gap.png'
 
-
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render(title_dict))
+        
     def post(self):
         title_dict['title']='Gap'
         title_dict['desc']='Its headquarters located in San Fransisco, California, Gap is home to a wide variety of clothing. This all became possible through its co-founders Donald and Doris Fisher. Gap is home to many subsidiaries including Old Navy, Banana Republic and more.'
