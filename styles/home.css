@@ -1,5 +1,25 @@
-#loginout {
+#routes {
   display: flex;
+  width: 100%;
+}
+
+#routespace {
+  flex: 10 10 auto;
+}
+
+.routechild {
+  flex: 1%;
+}
+
+#about {
+  padding: 0;
+  background: none;
+  border: none;
+  font-family: "Palatino", serif;
+  font-size: 15px;
+}
+
+#loginout {
   padding: 0;
   background: none;
   border: none;

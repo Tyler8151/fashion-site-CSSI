@@ -211,11 +211,15 @@ class AboutPage(webapp2.RequestHandler):
     def get(self):
         home_template= jinja_current_directory.get_template('templates/about.html')
         self.response.write(home_template.render())
+    def post(self):
+        main_template= jinja_current_directory.get_template('templates/about.html')
+        self.response.write(main_template.render())
 
 class ConPage(webapp2.RequestHandler):
     def get(self):
         con_template= jinja_current_directory.get_template('templates/contact.html')
         self.response.write(con_template.render())
+
 
 
 
