@@ -12,7 +12,12 @@
     <h1> S T Y L E  -  A I D </h1>
     <h2> style. made. simple. </h2>
     <div id="stores">
-      <form class="store" method='post' action='/H&M'>
+      {% for data in merchList %}
+      <a class="store" href={{data.link}}>
+        <button id={{data.id}}></button>
+      </a>
+      {% endfor %}
+      <!-- <form class="store" method='post' action='/H&M'>
         <button id="hm"></button>
       </form>
       <form class="store" method='post' action='/Aeropostale'>
@@ -56,7 +61,7 @@
       </form>
       <form class="store" method='post' action='/Zara'>
         <button id="zara"></button>
-      </form>
+      </form> -->
     </div>
   </body>
 </html>

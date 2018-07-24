@@ -11,13 +11,29 @@ jinja_current_directory = jinja2.Environment(
 
 comment_query = Comment.query().fetch()
 
-title_dict={'title': "", "desc": "",'opinion': "", 'logo': "", 'all_comments': comment_query }
+
 
 merchList = [
 {"link": "/H&M", "id": "hm"},
-{"link": "/Aeropostale", "id": "aero"}
-
+{"link": "/Aeropostale", "id": "aero"},
+{'link': '/AmericanEagle', 'id': 'AE'},
+{'link': '/AmericanApparel', 'id': 'AA'},
+{'link': '/Hollister', 'id': 'holl'},
+{'link': '/BananaRepublic', 'id': 'banana'},
+{'link': '/Bloomingdales', 'id': 'bloom'},
+{'link': '/Express', 'id': 'exp'},
+{'link': '/Forever21', 'id': 'f21'},
+{'link': '/Gap', 'id': 'Gap'},
+{'link': 'LuluLemon', 'id': 'Lulu'},
+{'link': '/OldNavy', 'id': 'old'},
+{'link': '/Uniqlo', 'id': 'Un'},
+{'link': '/UrbanOutFitters', 'id': 'urb'},
+{'link': '/Zara', 'id': 'zara'},
 ]
+
+title_dict={'title': "", "desc": "",'opinion': "", 'logo': "", 'all_comments': comment_query, 'merchList': merchList}
+
+
 
 class MerchantPage(webapp2.RequestHandler):
     def __init__(self, title, description, opinion, logo, brand, request, response):
