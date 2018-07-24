@@ -87,6 +87,12 @@ class LogPage(webapp2.RequestHandler):
         self.response.write(log_template.render())
 
     def post(self):
+        email = self.request.get('email')
+        password = self.request.get('password')
+        name = self.request.get('name')
+        username = self.request.get('username')
+
+
         log_template= jinja_current_directory.get_template('templates/login-out.html')
         self.response.write(log_template.render())
 
@@ -235,6 +241,10 @@ class AboutPage(webapp2.RequestHandler):
 
 class ConPage(webapp2.RequestHandler):
     def get(self):
+        con_template= jinja_current_directory.get_template('templates/contact.html')
+        self.response.write(con_template.render())
+
+    def post(self):
         con_template= jinja_current_directory.get_template('templates/contact.html')
         self.response.write(con_template.render())
 
