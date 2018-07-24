@@ -15,7 +15,7 @@ comment_query = Comment.query().fetch()
 
 merchList = [
 {"link": "/H&M", "id": "hm"},
-{"link": "/aero", "id": "aero"}
+{"link": "/Aeropostale", "id": "aero"}
 
 ]
 
@@ -78,7 +78,7 @@ class AeroPage(MerchantPage):
         'Aeropostale',\
         'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
         'This is where our opinion will go',\
-        'images/aero.png',\
+        'images/aeropostale.png',\
         'Aeropostale', request, response)
 
 class AmerEaglePage(MerchantPage):
@@ -220,6 +220,13 @@ class ConPage(webapp2.RequestHandler):
         con_template= jinja_current_directory.get_template('templates/contact.html')
         self.response.write(con_template.render())
 
+class RecPage(webapp2.RequestHandler):
+        def get(self):
+            rec_template= jinja_current_directory.get_template('templates/rec.html')
+            self.response.write(rec_template.render())
+        def post(self):
+            rec_template= jinja_current_directory.get_template('templates/rec.html')
+            self.response.write(rec_template.render())
 
 
 
@@ -242,5 +249,6 @@ app = webapp2.WSGIApplication([
     ('/UrbanOutFitters',UrbPage),
     ('/Zara',ZaraPage),
     ('/about',AboutPage),
-    ('/contact',ConPage)
+    ('/contact',ConPage),
+    ('/recommend', RecPage)
 ], debug=True)
