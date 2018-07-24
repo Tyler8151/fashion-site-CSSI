@@ -14,9 +14,21 @@ comment_query = Comment.query().fetch()
 
 
 merchList = [
-{"link": "/H&M", "id": "hm"},
-{"link": "/Aeropostale", "id": "aero"}
-
+{'link': "/H&M", "id": "hm"},
+{'link': "/Aeropostale", "id": "aero"},
+{'link': '/AmericanEagle', 'id': 'AE'},
+{'link': '/AmericanApparel', 'id': 'AA'},
+{'link': '/Hollister', 'id': 'holl'},
+{'link': '/BananaRepublic', 'id': 'banana'},
+{'link': '/Bloomingdales', 'id': 'bloom'},
+{'link': '/Express', 'id': 'exp'},
+{'link': '/Forever21', 'id': 'f21'},
+{'link': '/Gap', 'id': 'Gap'},
+{'link': '/LuluLemon', 'id': 'Lulu'},
+{'link': '/OldNavy', 'id': 'old'},
+{'link': '/Uniqlo', 'id': 'Un'},
+{'link': '/UrbanOutFitters', 'id': 'urb'},
+{'link': '/Zara', 'id': 'zara'},
 ]
 
 
@@ -31,13 +43,31 @@ merchList = [
 
 
 
-title_dict={'title': "", "desc": "",'opinion': "", 'logo': "", 'all_comments': comment_query }
+
+title_dict={'title': "", "desc": "",'opinion': "", 'logo': "", 'all_comments': comment_query, 'merchList': merchList }
 
 
 
 class MerchantPage(webapp2.RequestHandler):
     def __init__(self, title, description, opinion, logo, brand, request, response):
-        self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'all_comments': comment_query }
+        merchList = [
+        {'link': "/H&M", "id": "hm"},
+        {'link': "/Aeropostale", "id": "aero"},
+        {'link': '/AmericanEagle', 'id': 'AE'},
+        {'link': '/AmericanApparel', 'id': 'AA'},
+        {'link': '/Hollister', 'id': 'holl'},
+        {'link': '/BananaRepublic', 'id': 'banana'},
+        {'link': '/Bloomingdales', 'id': 'bloom'},
+        {'link': '/Express', 'id': 'exp'},
+        {'link': '/Forever21', 'id': 'f21'},
+        {'link': '/Gap', 'id': 'Gap'},
+        {'link': '/LuluLemon', 'id': 'Lulu'},
+        {'link': '/OldNavy', 'id': 'old'},
+        {'link': '/Uniqlo', 'id': 'Un'},
+        {'link': '/UrbanOutFitters', 'id': 'urb'},
+        {'link': '/Zara', 'id': 'zara'},
+        ]
+        self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'all_comments': comment_query, 'merchList': merchList}
         self.brand = brand
         self.initialize(request, response)
     def get(self):
@@ -72,13 +102,22 @@ class LogPage(webapp2.RequestHandler):
         log_template= jinja_current_directory.get_template('templates/login-out.html')
         self.response.write(log_template.render())
 
-class AeroPage(webapp2.RequestHandler):
+# class AeroPage(webapp2.RequestHandler):
+#     def __init__(self,request,response):
+#         MerchantPage.__init__(self,\
+#         'Aeropostale',\
+#         'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
+#         'This is where our opinion will go',\
+#         'images/aero.png',\
+#         'Aeropostale', request, response)
+
+class AeroPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
         'Aeropostale',\
         'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
         'This is where our opinion will go',\
-        'images/aero.png',\
+        'images/aeropostale.svg.png',\
         'Aeropostale', request, response)
 
 class AmerEaglePage(MerchantPage):
