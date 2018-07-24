@@ -10,10 +10,13 @@
       <input type='submit' value='back'>
     </form>
     <h1><img id= "a1" src="{{logo}}"></h1>
-
+</form>
 
     <h2> About {{title}} </h2>
     <p id="desc">{{desc}}</p>
+
+    <h2> SA's Opinion</h2>
+    <h3><img id="logo" src="/images/salogo.png">   {{opinion}}</h3>
 
     {% for comment in all_comments %}
         <p>{{comment.content}}</p>
