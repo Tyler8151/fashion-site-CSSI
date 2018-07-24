@@ -6,9 +6,16 @@
     <link href='styles/home.css' rel='stylesheet'>
   </head>
   <body>
-    <form method = 'post' action='/log'>
-      <button id="loginout">Sign in/Join</button>
-    </form>
+    <div id="routes">
+      <div id="routespace">
+      </div>
+      <form class="routechild" method = 'post' action='/log'>
+        <button id="loginout">Sign in/Join</button>
+      </form>
+      <form class="routechild" method = 'post' action='/about'>
+        <button id="about">About SA</button>
+      </form>
+    </div>
     <h1> S T Y L E  -  A I D </h1>
     <h2> style. made. simple. </h2>
     <div id="stores">
@@ -17,6 +24,9 @@
         <button id={{data.id}}></button>
       </a>
       {% endfor %}
+      <a class="recommend" href="/recommend">
+        <button id="rec"></button>
+        <a>
       <!-- <form class="store" method='post' action='/H&M'>
         <button id="hm"></button>
       </form>
