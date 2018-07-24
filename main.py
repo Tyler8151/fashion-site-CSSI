@@ -78,14 +78,14 @@ class AmerEaglePage(webapp2.RequestHandler):
 class AmerApparelPage(webapp2.RequestHandler):
     def get(self):
         title_dict['title']='American Apparel'
-        title_dict['desc']='This part of the webiste will contain the description of the brand'
+        title_dict['desc']='American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/americanapparel.png'
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
     def post(self):
         title_dict['title']='American Apparel'
-        title_dict['desc']='This part of the webiste will contain the description of the brand'
+        title_dict['desc']='American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/americanapparel.png'
 
@@ -144,14 +144,14 @@ class BloomPage(webapp2.RequestHandler):
 class ExpressPage(webapp2.RequestHandler):
     def get(self):
         title_dict['title']='Express'
-        title_dict['desc']='This part of the webiste will contain the description of the brand'
+        title_dict['desc']='Under CEO David Komberg, Express has expanded to encompass 641 factions as of January 2015. The catalog of clothing here mostly pertains to young women and men.'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/express.png'
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
     def post(self):
         title_dict['title']='Express'
-        title_dict['desc']='This part of the webiste will contain the description of the brand'
+        title_dict['desc']='Under CEO David Komberg, Express has expanded to encompass 641 factions as of January 2015. The catalog of clothing here mostly pertains to young women and men.'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/express.png'
 
@@ -188,14 +188,14 @@ class F21Page(webapp2.RequestHandler):
 class GapPage(webapp2.RequestHandler):
     def get(self):
         title_dict['title']='Gap'
-        title_dict['desc']='This part of the webiste will contain the description of the brand'
+        title_dict['desc']='Its headquarters located in San Fransisco, California, Gap is home to a wide variety of clothing. This all became possible through its co-founders Donald and Doris Fisher. Gap is home to many subsidiaries including Old Navy, Banana Republic and more.'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/gap.png'
 
 
     def post(self):
         title_dict['title']='Gap'
-        title_dict['desc']='This part of the webiste will contain the description of the brand'
+        title_dict['desc']='Its headquarters located in San Fransisco, California, Gap is home to a wide variety of clothing. This all became possible through its co-founders Donald and Doris Fisher. Gap is home to many subsidiaries including Old Navy, Banana Republic and more.'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/gap.png'
 
@@ -276,14 +276,14 @@ class LuluPage(webapp2.RequestHandler):
 class OldPage(webapp2.RequestHandler):
     def get(self):
         title_dict['title']='Old Navy'
-        title_dict['desc']='This part of the webiste will contain the description of the brand'
+        title_dict['desc']='Old Navy was originally named Gap Warehouse, but was later renamed to become a separate entity. It was then established in March of 1994, when it was named after a bar in Paris.'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/old.png'
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
     def post(self):
         title_dict['title']='Old Navy'
-        title_dict['desc']='This part of the webiste will contain the description of the brand'
+        title_dict['desc']='Old Navy was originally named Gap Warehouse, but was later renamed to become a separate entity. It was then established in March of 1994, when it was named after a bar in Paris.'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/old.png'
 
@@ -320,14 +320,14 @@ class UnPage(webapp2.RequestHandler):
 class UrbPage(webapp2.RequestHandler):
     def get(self):
         title_dict['title']='Urban Outfitters'
-        title_dict['desc']='This part of the webiste will contain the description of the brand'
+        title_dict['desc']='Owned by Richard Hayne, urban outfitters headquarters is located in Philly, Pennsylvania. There are a total of 402 retail stores, and mostly selling what is known as "hipster clothing".'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/urb.png'
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
     def post(self):
         title_dict['title']='Urban Outfitters'
-        title_dict['desc']='This part of the webiste will contain the description of the brand'
+        title_dict['desc']='Owned by Richard Hayne, urban outfitters headquarters is located in Philly, Pennsylvania. There are a total of 402 retail stores, and mostly selling what is known as "hipster clothing".'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/urb.png'
 
@@ -353,11 +353,9 @@ class ZaraPage(webapp2.RequestHandler):
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/zara.png'
 
-<<<<<<< HEAD
-=======
         comment = self.request.get('comment')
 
->>>>>>> 3263cbb66a340b4c78709862855484250b4b9e28
+
         zara_comment = Comment(content=comment, brand='Zara')
         zara_comment.put()
 
