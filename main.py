@@ -13,6 +13,34 @@ comment_query = Comment.query().fetch()
 
 title_dict={'title': "", "desc": "",'opinion': "", 'logo': "", 'all_comments': comment_query }
 
+merchList = [
+{"link": "/H&M", "id": "hm"},
+{"link": "/Aeropostale", "id": "aero"}
+
+]
+
+class MerchantPage(webapp2.RequestHandler):
+    def __init__(self, title, description, opinion, logo, brand, request, response):
+        self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'all_comments': comment_query }
+        self.brand = brand
+        self.initialize(request, response)
+    def get(self):
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render(self.title_dict))
+
+    def post(self):
+
+        comment = self.request.get('comment')
+        print '\n\n\n\n\n\nhey\n\n'
+        print comment
+        print '*******************\n'
+
+        amerApparel_comment = Comment(content=comment, brand=self.brand)
+        amerApparel_comment.put()
+
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render(self.title_dict))
+
 class HomePage(webapp2.RequestHandler):
     def get(self):
         main_template= jinja_current_directory.get_template('templates/homepg.html')
@@ -78,29 +106,36 @@ class AmerEaglePage(webapp2.RequestHandler):
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
 
-class AmerApparelPage(webapp2.RequestHandler):
-    def get(self):
-        title_dict['title']='American Apparel'
-        title_dict['desc']='American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.'
-        title_dict['opinion']='This is where our opinion will go'
-        title_dict['logo']='images/americanapparel.png'
-        home_template= jinja_current_directory.get_template('templates/store.html')
-        self.response.write(home_template.render(title_dict))
-
-    def post(self):
-        title_dict['title']='American Apparel'
-        title_dict['desc']='American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.'
-        title_dict['opinion']='This is where our opinion will go'
-        title_dict['logo']='images/americanapparel.png'
-
-        comment = self.request.get('comment')
-
-        amerApparel_comment = Comment(content=comment, brand='American Apparel')
-        amerApparel_comment.put()
-
-        home_template= jinja_current_directory.get_template('templates/store.html')
-        self.response.write(home_template.render(title_dict))
-
+# class AmerApparelPage(webapp2.RequestHandler):
+#     def get(self):
+#         title_dict['title']='American Apparel'
+#         title_dict['desc']='American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.'
+#         title_dict['opinion']='This is where our opinion will go'
+#         title_dict['logo']='images/americanapparel.png'
+#         home_template= jinja_current_directory.get_template('templates/store.html')
+#         self.response.write(home_template.render(title_dict))
+#
+#     def post(self):
+#         title_dict['title']='American Apparel'
+#         title_dict['desc']='American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.'
+#         title_dict['opinion']='This is where our opinion will go'
+#         title_dict['logo']='images/americanapparel.png'
+#
+#         comment = self.request.get('comment')
+#
+#         amerApparel_comment = Comment(content=comment, brand='American Apparel')
+#         amerApparel_comment.put()
+#
+#         home_template= jinja_current_directory.get_template('templates/store.html')
+#         self.response.write(home_template.render(title_dict))
+class AmerApparelPage(MerchantPage):
+    def __init__(self, request, response):
+        MerchantPage.__init__(self,\
+         'American Apparel',\
+          'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
+           'This is where our opinion will go',\
+          'images/americanapparel.png',\
+          'American Apparel', request, response)
 class BananaPage(webapp2.RequestHandler):
     def get(self):
         title_dict['title']='Banana Republic'
@@ -381,7 +416,7 @@ class ZaraPage(webapp2.RequestHandler):
 
 class AboutPage(webapp2.RequestHandler):
     def get(self):
-        home_template= jinja_current_directory.get_template('templates/store.html')
+        home_template= jinja_current_directory.get_template('templates/about.html')
         self.response.write(home_template.render())
 
 class ConPage(webapp2.RequestHandler):
