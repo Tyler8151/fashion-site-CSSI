@@ -15,15 +15,6 @@ span {
   font-size: 50px;
 }
 
-#description {
-  text-align: center;
-  line-height: 20px;
-  width: 60%;
-  font-family: "Palatino", serif;
-  font-size: 17px;
-  margin: auto;
-}
-
 #routes {
   display: flex;
   width: 100%;
@@ -54,14 +45,11 @@ span {
   font-size: 15px;
 }
 
-#cbyc {
-
-}
-
-#persona {
-
-}
-
-#inspo {
-  
+#description {
+  text-align: center;
+  line-height: 20px;
+  width: 60%;
+  font-family: "Palatino", serif;
+  font-size: 17px;
+  margin: auto;
 }
