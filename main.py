@@ -37,7 +37,7 @@ title_dict={'title': "", "desc": "",'opinion': "", 'logo': "", 'all_comments': c
 
 
 class MerchantPage(webapp2.RequestHandler):
-    def __init__(self, title, description, opinion, logo, brand, request, response, clothing):
+    def __init__(self, title, description, opinion, logo, brand, clothing, image, request, response):
         merchList = [
         {'link': "/H&M", "id": "hm"},
         {'link': "/Aeropostale", "id": "aero"},
@@ -55,7 +55,7 @@ class MerchantPage(webapp2.RequestHandler):
         {'link': '/UrbanOutFitters', 'id': 'urb'},
         {'link': '/Zara', 'id': 'zara'},
         ]
-        self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'all_comments': comment_query, 'merchList': merchList, 'clothing': clothing}
+        self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'all_comments': comment_query, 'merchList': merchList, 'clothing': clothing, "image": image }
         self.brand = brand
         self.initialize(request, response)
     def get(self):
@@ -103,7 +103,10 @@ class AeroPage(MerchantPage):
         'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
         'This is where our opinion will go',\
         'images/aeropostale.svg.png',\
-        'Aeropostale', request, response)
+        'Aeropostale',\
+        "http://www.aeropostale.com/skinny-medium-wash-stretch-jean/64131354.html?dwvar_64131354_color=962&cgid=",\
+        "http://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dwdffd5f1d/64131354_962_main.jpg?sw=2000&sh=2000&sm=fit&sfrm=jpg",\
+         request, response)
 
 class AmerEaglePage(MerchantPage):
     def __init__(self,request,response):
@@ -175,7 +178,10 @@ class HMPage(MerchantPage):
         'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
         'This is where our opinion will go',\
         'images/hm-logo.png',\
-        'H&M', request, response)
+        'H&M',\
+        "http://www2.hm.com/en_us/productpage.0631735001.html",\
+        "http://lp2.hm.com/hmgoepprod?set=source[/8a/5c/8a5c6a561d73203b2b0b8c6faf5018583a34ccb9.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],hmver[1]&call=url[file:/product/style]",\
+         request, response)
 
 class HollPage(MerchantPage):
     def __init__(self,request,response):
