@@ -12,5 +12,10 @@
     <h2> About {{title}} </h2>
     <p id="desc">{{desc}}</p>
 
+    {% for comment in all_comments %}
+        <li>{{comment.content}}</li>
+        <li>${{comment.brand}}</li>
+    {% endfor %}
+
   </body>
 </html>
