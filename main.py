@@ -21,6 +21,10 @@ class HomePage(webapp2.RequestHandler):
         self.response.write(main_template.render(title_dict))
 
 class LogPage(webapp2.RequestHandler):
+    def get(self):
+        log_template= jinja_current_directory.get_template('templates/login-out.html')
+        self.response.write(log_template.render())
+
     def post(self):
         log_template= jinja_current_directory.get_template('templates/login-out.html')
         self.response.write(log_template.render())
@@ -63,6 +67,8 @@ class AmerEaglePage(webapp2.RequestHandler):
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/americaneagle.svg.png'
 
+        comment = self.request.get('comment')
+
         amerEagle_comment = Comment(content=comment, brand='American Eagle')
         amerEagle_comment.put()
 
@@ -82,6 +88,8 @@ class AmerApparelPage(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/americanapparel.png'
+
+        comment = self.request.get('comment')
 
         amerApparel_comment = Comment(content=comment, brand='American Apparel')
         amerApparel_comment.put()
@@ -103,6 +111,8 @@ class BananaPage(webapp2.RequestHandler):
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/banana.png'
 
+        comment = self.request.get('comment')
+
         banana_comment = Comment(content=comment, brand='Banana Republic')
         banana_comment.put()
 
@@ -122,6 +132,8 @@ class BloomPage(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/bloom.png'
+
+        comment = self.request.get('comment')
 
         bloom_comment = Comment(content=comment, brand='Bloomingdales')
         bloom_comment.put()
@@ -143,6 +155,8 @@ class ExpressPage(webapp2.RequestHandler):
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/express.png'
 
+        comment = self.request.get('comment')
+
         exp_comment = Comment(content=comment, brand='Express')
         exp_comment.put()
 
@@ -162,6 +176,8 @@ class F21Page(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/f21.png'
+
+        comment = self.request.get('comment')
 
         f21_comment = Comment(content=comment, brand='Forever 21')
         f21_comment.put()
@@ -183,6 +199,8 @@ class GapPage(webapp2.RequestHandler):
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/gap.png'
 
+        comment = self.request.get('comment')
+
         gap_comment = Comment(content=comment, brand='Gap')
         gap_comment.put()
 
@@ -202,6 +220,8 @@ class HMPage(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/hm-logo.png'
+
+        comment = self.request.get('comment')
 
         hm_comment = Comment(content=comment, brand='H&M')
         hm_comment.put()
@@ -223,6 +243,8 @@ class HollPage(webapp2.RequestHandler):
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/hollister.png'
 
+        comment = self.request.get('comment')
+
         holl_comment = Comment(content=comment, brand='Hollister')
         holl_comment.put()
 
@@ -242,6 +264,8 @@ class LuluPage(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/lulu.png'
+
+        comment = self.request.get('comment')
 
         lulu_comment = Comment(content=comment, brand='LuluLemon')
         lulu_comment.put()
@@ -263,6 +287,8 @@ class OldPage(webapp2.RequestHandler):
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/old.png'
 
+        comment = self.request.get('comment')
+
         old_comment = Comment(content=comment, brand='Old Navy')
         old_comment.put()
 
@@ -282,6 +308,8 @@ class UnPage(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/uni.png'
+
+        comment = self.request.get('comment')
 
         uni_comment = Comment(content=comment, brand='Uniqlo')
         uni_comment.put()
@@ -303,6 +331,8 @@ class UrbPage(webapp2.RequestHandler):
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/urb.png'
 
+        comment = self.request.get('comment')
+
         urb_comment = Comment(content=comment, brand='Urban Outfitters')
         urb_comment.put()
 
@@ -323,7 +353,9 @@ class ZaraPage(webapp2.RequestHandler):
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/zara.png'
 
-        zara_comment = Comment(content=comment, brand='Zara)
+        comment = self.request.get('comment')
+
+        zara_comment = Comment(content=comment, brand='Zara')
         zara_comment.put()
 
         home_template= jinja_current_directory.get_template('templates/store.html')
