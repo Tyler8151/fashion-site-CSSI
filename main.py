@@ -32,24 +32,12 @@ merchList = [
 ]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 title_dict={'title': "", "desc": "",'opinion': "", 'logo': "", 'all_comments': comment_query, 'merchList': merchList }
 
 
 
 class MerchantPage(webapp2.RequestHandler):
-    def __init__(self, title, description, opinion, logo, brand, request, response):
+    def __init__(self, title, description, opinion, logo, brand, request, response, clothing):
         merchList = [
         {'link': "/H&M", "id": "hm"},
         {'link': "/Aeropostale", "id": "aero"},
@@ -67,7 +55,7 @@ class MerchantPage(webapp2.RequestHandler):
         {'link': '/UrbanOutFitters', 'id': 'urb'},
         {'link': '/Zara', 'id': 'zara'},
         ]
-        self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'all_comments': comment_query, 'merchList': merchList}
+        self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'all_comments': comment_query, 'merchList': merchList, 'clothing': clothing}
         self.brand = brand
         self.initialize(request, response)
     def get(self):
@@ -99,6 +87,12 @@ class LogPage(webapp2.RequestHandler):
         self.response.write(log_template.render())
 
     def post(self):
+        email = self.request.get('email')
+        password = self.request.get('password')
+        name = self.request.get('name')
+        username = self.request.get('username')
+
+
         log_template= jinja_current_directory.get_template('templates/login-out.html')
         self.response.write(log_template.render())
 
@@ -142,7 +136,7 @@ class BloomPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
         'Bloomingdales',\
-        'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
+        "Although a bit on the pricier side, Bloomingdales expectations of quality apparel exceeds that of its many major competitors. Bloomingdales robust collection of jewelry, accessories, clothing, and handbags makes it a top retailer on many fashion enthusiasts radars. If your fashion standards only demand to be beaten, then Bloomingdales is your one-stop style shop.",\
         'This is where our opinion will go',\
         'images/bloom.png',\
         'Bloomingdales', request, response)
@@ -151,7 +145,7 @@ class ExpressPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
         'Express',\
-        'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
+        'Under CEO David Komberg, Express has expanded to encompass 641 factions as of January 2015. The catalog of clothing here mostly pertains to young women and men.',\
         'This is where our opinion will go',\
         'images/express.png',\
         'Express', request, response)
@@ -160,7 +154,7 @@ class F21Page(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
         'Forever 21',\
-        'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
+        'Forever 21 bravely embraces the quirkier and funkier nature of fashion while carefully treading the line between whats too weird and whats not. Those looking for a unique treat each visit to either their site or store will be pleasantly surprised to the plethora of tasteful accessories and apparel more so catered to young ladies.',\
         'This is where our opinion will go',\
         'images/f21.png',\
         'Forever 21', request, response)
@@ -169,7 +163,7 @@ class GapPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
         'Gap',\
-        'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
+        'Its headquarters located in San Fransisco, California, Gap is home to a wide variety of clothing. This all became possible through its co-founders Donald and Doris Fisher. Gap is home to many subsidiaries including Old Navy, Banana Republic and more.',\
         'This is where our opinion will go',\
         'images/gap.png',\
         'Gap', request, response)
@@ -205,7 +199,7 @@ class OldPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
         'Old Navy',\
-        'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
+        'Old Navy was originally named Gap Warehouse, but was later renamed to become a separate entity. It was then established in March of 1994, when it was named after a bar in Paris.',\
         'This is where our opinion will go',\
         'images/old.png',\
         'Old Navy', request, response)
@@ -213,20 +207,20 @@ class OldPage(MerchantPage):
 class UnPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
-        'Urban OutFitters',\
-        'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
+        'Uniqlo',\
+        'Uniqlo embraces the simplicity, longevity, and quality of Japanese values - and that is evident in their wide selection of affordable apparel. Enthusiasts familiar with popular clothing lines such as H&M or Forever 21 will feel right at home with Uniqlos unique approach to subtlety.',\
         'This is where our opinion will go',\
         'images/uni.png',\
-        'Urban OutFitters', request, response)
+        'Uniqlo', request, response)
 
 class UrbPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
-        'Old Navy',\
-        'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
+        'Urban OutFitters',\
+        'Owned by Richard Hayne, urban outfitters headquarters is located in Philly, Pennsylvania. There are a total of 402 retail stores, and mostly selling what is known as "hipster clothing".',\
         'This is where our opinion will go',\
-        'images/urb.png',\
-        'Old Navy', request, response)
+        'images/uni.png',\
+        'Urban OutFitters', request, response)
 
 class ZaraPage(MerchantPage):
     def __init__(self,request,response):
@@ -250,13 +244,17 @@ class ConPage(webapp2.RequestHandler):
         con_template= jinja_current_directory.get_template('templates/contact.html')
         self.response.write(con_template.render())
 
+    def post(self):
+        con_template= jinja_current_directory.get_template('templates/contact.html')
+        self.response.write(con_template.render())
+
 class RecPage(webapp2.RequestHandler):
-        def get(self):
-            rec_template= jinja_current_directory.get_template('templates/rec.html')
-            self.response.write(rec_template.render())
-        def post(self):
-            rec_template= jinja_current_directory.get_template('templates/rec.html')
-            self.response.write(rec_template.render())
+    def get(self):
+        rec_template= jinja_current_directory.get_template('templates/rec.html')
+        self.response.write(rec_template.render())
+    def post(self):
+        rec_template= jinja_current_directory.get_template('templates/rec.html')
+        self.response.write(rec_template.render())
 
 
 
