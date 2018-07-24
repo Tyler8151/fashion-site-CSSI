@@ -323,7 +323,7 @@ class ZaraPage(webapp2.RequestHandler):
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/zara.png'
 
-        zara_comment = Comment(content=comment, brand='Zara)
+        zara_comment = Comment(content=comment, brand='Zara')
         zara_comment.put()
 
         home_template= jinja_current_directory.get_template('templates/store.html')
