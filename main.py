@@ -364,7 +364,7 @@ class ZaraPage(webapp2.RequestHandler):
 
 class AboutPage(webapp2.RequestHandler):
     def get(self):
-        home_template= jinja_current_directory.get_template('templates/store.html')
+        home_template= jinja_current_directory.get_template('templates/about.html')
         self.response.write(home_template.render())
 
 class ConPage(webapp2.RequestHandler):

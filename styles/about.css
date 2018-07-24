@@ -1,0 +1,44 @@
+h1 {
+  text-align: center;
+  font-family: "Palatino", serif;
+  font-size: 30px;
+}
+
+span {
+  font-size: 30px;
+  color: #EAD1B3;
+  font-family: "Palatino", serif;
+  font-size: 20px;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Palatino", serif;
+  font-size: 20px;
+}
+
+#descript {
+  text-align: center;
+  width: 70%;
+  font-family: "Palatino", serif;
+  font-size: 18px;
+  margin: auto;
+}
+
+#loginout {
+  display: flex;
+  padding: 0;
+  background: none;
+  border: none;
+  font-family: "Palatino", serif;
+  font-size: 15px;
+}
+
+#homepg {
+  display: flex;
+  padding: 0;
+  background: none;
+  border: none;
+  font-family: "Palatino", serif;
+  font-size: 15px;
+}
