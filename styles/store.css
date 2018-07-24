@@ -24,9 +24,16 @@ text-align: center;
 
 }
 #logo{
+  display: flex;
+  justify-content: flex-start;
 width: 100px;
 height: 100px;
 
 
+
+
+}
+h3{
+text-align: center;
 
 }
