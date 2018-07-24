@@ -15,7 +15,7 @@ comment_query = Comment.query().fetch()
 
 merchList = [
 {"link": "/H&M", "id": "hm"},
-{"link": "/Aeropostale", "id": "aero"}
+{"link": "/aero", "id": "aero"}
 
 ]
 
@@ -72,7 +72,7 @@ class LogPage(webapp2.RequestHandler):
         log_template= jinja_current_directory.get_template('templates/login-out.html')
         self.response.write(log_template.render())
 
-class AeroPage(webapp2.RequestHandler):
+class AeroPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
         'Aeropostale',\
