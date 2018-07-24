@@ -10,10 +10,6 @@ jinja_current_directory = jinja2.Environment(
     autoescape = True)
 
 title_dict={'title': "", "desc": "",'opinion': "", 'logo': "" }
-comment_query = Comment.query().fetch()
-comment_dict = {
-        'all_comments': comment_query,
-        }
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
@@ -180,16 +176,16 @@ class GapPage(webapp2.RequestHandler):
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/gap.png'
 
-        gap_comment = Comment(content=comment, brand='Gap')
-        gap_comment.put()
 
-        home_template= jinja_current_directory.get_template('templates/store.html')
-        self.response.write(home_template.render(title_dict))
     def post(self):
         title_dict['title']='Gap'
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/gap.png'
+
+        gap_comment = Comment(content=comment, brand='Gap')
+        gap_comment.put()
+
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
 
@@ -206,6 +202,10 @@ class HMPage(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/hm-logo.png'
+
+        hm_comment = Comment(content=comment, brand='H&M')
+        hm_comment.put()
+
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
 
@@ -222,6 +222,10 @@ class HollPage(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/hollister.png'
+
+        holl_comment = Comment(content=comment, brand='Hollister')
+        holl_comment.put()
+
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
 
@@ -238,6 +242,10 @@ class LuluPage(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/lulu.png'
+
+        lulu_comment = Comment(content=comment, brand='LuluLemon')
+        lulu_comment.put()
+
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
 
@@ -254,6 +262,10 @@ class OldPage(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/old.png'
+
+        old_comment = Comment(content=comment, brand='Old Navy')
+        old_comment.put()
+
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
 
@@ -270,6 +282,10 @@ class UnPage(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/uni.png'
+
+        uni_comment = Comment(content=comment, brand='Uniqlo')
+        uni_comment.put()
+
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
 
@@ -286,6 +302,10 @@ class UrbPage(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/urb.png'
+
+        urb_comment = Comment(content=comment, brand='Urban Outfitters')
+        urb_comment.put()
+
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
 
@@ -302,6 +322,10 @@ class ZaraPage(webapp2.RequestHandler):
         title_dict['desc']='This part of the webiste will contain the description of the brand'
         title_dict['opinion']='This is where our opinion will go'
         title_dict['logo']='images/zara.png'
+
+        zara_comment = Comment(content=comment, brand='Zara)
+        zara_comment.put()
+
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(title_dict))
 
