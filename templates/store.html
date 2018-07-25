@@ -1,33 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-<<<<<<< HEAD
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link href='styles/store.css' rel='stylesheet'>
-  </head>
-  <body>
-    <a href='/'>
-      <button>Back</button>
-      <h1><img id= "a1" src="{{logo}}"></h1>
-    </a>
 
-    <h2> About {{title}} </h2>
-    <p id="desc">{{desc}}</p>
-
-  <h2> SA's Opinion</h2>
-  <h3><img id="logo" src="/images/salogo.png">   {{opinion}}</h3>
-
-
-  </a>
-  <a  id="images" href={{clothing}} title="Bib Overall Dress" class="product-item-link">
-    <img width="222" height="333" src={{image}} class="product-item-image swipe-expose-item-image" alt="Bib Overall Dress">
-
-
-
-  </a>
-  {% for comment in comments %}
-=======
 <head>
   <meta charset="utf-8">
   <title></title>
@@ -56,8 +28,7 @@
       <img width="222" height="333" src={{image3}}>
     </a>
   </div>
-  {% for comment in all_comments %}
->>>>>>> 4b33b90c1196a5de76a24785b0f34a995593fb08
+  {% for comment in comments %}
   <p>{{comment.content}}</p>
   {% endfor %}
   <form method='post'>
