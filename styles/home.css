@@ -1,3 +1,4 @@
+
 #routes {
   display: flex;
   width: 100%;
@@ -20,6 +21,14 @@
 }
 
 #loginout {
+  padding: 0;
+  background: none;
+  border: none;
+  font-family: "Palatino", serif;
+  font-size: 15px;
+}
+
+#rec {
   padding: 0;
   background: none;
   border: none;
