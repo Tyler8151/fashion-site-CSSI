@@ -138,7 +138,10 @@ class AmerEaglePage(MerchantPage):
         'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
         'This is where our opinion will go',\
         'images/americaneagle.svg.png',\
-        'American Eagle', request, response)
+        'American Eagle'\
+        "https://www.ae.com/women-aeo-velvet-double-strap-sandal-mustard/web/s-prod/1415_4051_284?cm=sUS-cUSD&catId=cat7900075",\
+        "https://s7d2.scene7.com/is/image/aeo/1415_4051_284_f?$PDP_78_Main$",\
+         request, response)
 
 class AmerApparelPage(MerchantPage):
     def __init__(self, request, response):
