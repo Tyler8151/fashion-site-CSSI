@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+<<<<<<< HEAD
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -26,12 +27,42 @@
 
   </a>
   {% for comment in comments %}
+=======
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href='styles/store.css' rel='stylesheet'>
+</head>
+<body>
+  <div id="routes">
+    <form class="routechild" method = 'post' action='/'>
+      <button id="homepg">Home</button>
+    </form>
+  </div>
+  <h1><img id= "a1" src="{{logo}}"></h1>
+  <h2>{{title}}<span> about</span></h2>
+  <div id="desc">
+    <p>{{desc}}</p>
+  </div>
+  <h3>T R E N D I N G - I T E M S</h3>
+  <div>
+    <a  id="images" href={{clothing}}>
+      <img width="222" height="333" src={{image}}>
+    </a>
+    <a  id="images2" href={{clothing2}}>
+      <img width="222" height="333" src={{image2}}>
+    </a>
+    <a  id="images3" href={{clothing3}}>
+      <img width="222" height="333" src={{image3}}>
+    </a>
+  </div>
+  {% for comment in all_comments %}
+>>>>>>> 4b33b90c1196a5de76a24785b0f34a995593fb08
   <p>{{comment.content}}</p>
   {% endfor %}
   <form method='post'>
     <input type="text" name="comment" placeholder='write a comment...'>
     <input type='submit'>
   </form>
-  <p>{{comment_list}}</p>
 </body>
 </html>

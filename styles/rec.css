@@ -10,10 +10,9 @@ h1 {
 }
 
 span {
-  font-size: 30px;
+  font-size: 50px;
   color: red;
   font-family: cursive;
-  font-size: 50px;
 }
 
 #routes {
@@ -27,8 +26,8 @@ span {
   border: none;
   font-family: "Palatino", serif;
   font-size: 15px;
-
 }
+
 .routechild {
   flex: 1%;
 }

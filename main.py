@@ -21,9 +21,31 @@ User.query().fetch()
 
 
 class MerchantPage(webapp2.RequestHandler):
+<<<<<<< HEAD
     def __init__(self, title, description, opinion, logo, brand, clothing, image, request, response):
 
         self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'clothing': clothing, "image": image }
+=======
+    def __init__(self, title, description, opinion, logo, brand, clothing, image, clothing2, image2, clothing3, image3, request, response):
+        merchList = [
+        {'link': "/H&M", "id": "hm"},
+        {'link': "/Aeropostale", "id": "aero"},
+        {'link': '/AmericanEagle', 'id': 'AE'},
+        {'link': '/AmericanApparel', 'id': 'AA'},
+        {'link': '/Hollister', 'id': 'holl'},
+        {'link': '/BananaRepublic', 'id': 'banana'},
+        {'link': '/Bloomingdales', 'id': 'bloom'},
+        {'link': '/Express', 'id': 'exp'},
+        {'link': '/Forever21', 'id': 'f21'},
+        {'link': '/Gap', 'id': 'Gap'},
+        {'link': '/LuluLemon', 'id': 'Lulu'},
+        {'link': '/OldNavy', 'id': 'old'},
+        {'link': '/Uniqlo', 'id': 'Un'},
+        {'link': '/UrbanOutFitters', 'id': 'urb'},
+        {'link': '/Zara', 'id': 'zara'},
+        ]
+        self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'all_comments': Comment.query().fetch(), 'merchList': merchList, 'clothing': clothing, "image": image, 'clothing2': clothing2, 'image2': image2, 'clothing3': clothing3, "image3": image3}
+>>>>>>> 4b33b90c1196a5de76a24785b0f34a995593fb08
         self.brand = brand
         self.initialize(request, response)
     def get(self):
@@ -108,7 +130,7 @@ class LogPage(webapp2.RequestHandler):
 class AeroPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
-        'Aeropostale',\
+        'A E R O P O S T A L E',\
         'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
         'This is where our opinion will go',\
         'images/aeropostale.svg.png',\
@@ -120,7 +142,7 @@ class AeroPage(MerchantPage):
 class AmerEaglePage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
-        'American Eagle',\
+        'A M E R I C A N - E A G L E',\
         'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
         'This is where our opinion will go',\
         'images/americaneagle.svg.png',\
@@ -132,7 +154,7 @@ class AmerEaglePage(MerchantPage):
 class AmerApparelPage(MerchantPage):
     def __init__(self, request, response):
         MerchantPage.__init__(self,\
-        'American Apparel',\
+        'A M E R I C A N - A P P A R E L',\
         'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
         'This is where our opinion will go',\
         'images/americanapparel.png',\
@@ -144,7 +166,7 @@ class AmerApparelPage(MerchantPage):
 class BananaPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
-        'Banana Republic',\
+        'B A N A N A - R E P U B L I C',\
         'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
         'This is where our opinion will go',\
         'images/banana.png',\
@@ -156,7 +178,7 @@ class BananaPage(MerchantPage):
 class BloomPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
-        'Bloomingdales',\
+        'B L O O M I N G D A L E S',\
         "Although a bit on the pricier side, Bloomingdales expectations of quality apparel exceeds that of its many major competitors. Bloomingdales robust collection of jewelry, accessories, clothing, and handbags makes it a top retailer on many fashion enthusiasts radars. If your fashion standards only demand to be beaten, then Bloomingdales is your one-stop style shop.",\
         'This is where our opinion will go',\
         'images/bloom.png',\
@@ -168,7 +190,7 @@ class BloomPage(MerchantPage):
 class ExpressPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
-        'Express',\
+        'E X P R E S S',\
         'Under CEO David Komberg, Express has expanded to encompass 641 factions as of January 2015. The catalog of clothing here mostly pertains to young women and men.',\
         'This is where our opinion will go',\
         'images/express.png',\
@@ -180,7 +202,7 @@ class ExpressPage(MerchantPage):
 class F21Page(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
-        'Forever 21',\
+        'F O R E V E R - 2 1',\
         'Forever 21 bravely embraces the quirkier and funkier nature of fashion while carefully treading the line between whats too weird and whats not. Those looking for a unique treat each visit to either their site or store will be pleasantly surprised to the plethora of tasteful accessories and apparel more so catered to young ladies.',\
         'This is where our opinion will go',\
         'images/f21.png',\
@@ -192,7 +214,7 @@ class F21Page(MerchantPage):
 class GapPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
-        'Gap',\
+        'G A P',\
         'Its headquarters located in San Fransisco, California, Gap is home to a wide variety of clothing. This all became possible through its co-founders Donald and Doris Fisher. Gap is home to many subsidiaries including Old Navy, Banana Republic and more.',\
         'This is where our opinion will go',\
         'images/gap.png',\
@@ -204,19 +226,23 @@ class GapPage(MerchantPage):
 class HMPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
-        'H&M',\
+        'H & M',\
         'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
         'This is where our opinion will go',\
         'images/hm-logo.png',\
         'H&M',\
         "http://www2.hm.com/en_us/productpage.0631735001.html",\
         "http://lp2.hm.com/hmgoepprod?set=source[/8a/5c/8a5c6a561d73203b2b0b8c6faf5018583a34ccb9.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],hmver[1]&call=url[file:/product/style]",\
-         request, response)
+        "http://www2.hm.com/en_us/productpage.0441386004.html",\
+        "http://lp2.hm.com/hmgoepprod?set=source[/2b/3f/2b3f3e5934822ca955e4db065d8edf3e8961e167.jpg],origin[dam],category[men_trousers_joggers],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/fullscreen]",\
+        "http://www2.hm.com/en_us/productpage.0619580006.html",\
+        "http://lp2.hm.com/hmgoepprod?set=source[/4c/90/4c905aa7a0940191666f01bfa64b9458e41f298d.jpg],origin[dam],category[ladies_shorts],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/fullscreen]",\
+        request, response)
 
 class HollPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
-        'Hollister',\
+        'H O L L I S T E R',\
         'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
         'This is where our opinion will go',\
         'images/hollister.png',\
@@ -228,7 +254,7 @@ class HollPage(MerchantPage):
 class LuluPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
-        'LuluLemon',\
+        'L U L U L E M O N',\
         'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
         'This is where our opinion will go',\
         'images/lulu.png',\
@@ -240,7 +266,7 @@ class LuluPage(MerchantPage):
 class OldPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
-        'Old Navy',\
+        'O L D - N A V Y',\
         'Old Navy was originally named Gap Warehouse, but was later renamed to become a separate entity. It was then established in March of 1994, when it was named after a bar in Paris.',\
         'This is where our opinion will go',\
         'images/old.png',\
@@ -252,7 +278,7 @@ class OldPage(MerchantPage):
 class UnPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
-        'Uniqlo',\
+        'U N I Q L O',\
         'Uniqlo embraces the simplicity, longevity, and quality of Japanese values - and that is evident in their wide selection of affordable apparel. Enthusiasts familiar with popular clothing lines such as H&M or Forever 21 will feel right at home with Uniqlos unique approach to subtlety.',\
         'This is where our opinion will go',\
         'images/uni.png',\
@@ -264,10 +290,10 @@ class UnPage(MerchantPage):
 class UrbPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
-        'Urban OutFitters',\
+        'U R B A N O U T F I T T E R S',\
         'Owned by Richard Hayne, urban outfitters headquarters is located in Philly, Pennsylvania. There are a total of 402 retail stores, and mostly selling what is known as "hipster clothing".',\
         'This is where our opinion will go',\
-        'images/uni.png',\
+        'images/urb.png',\
         'Urban OutFitters',\
         "https://www.urbanoutfitters.com/shop/bdg-core-denim-trucker-jacket-001?category=mens-jackets&color=092",\
         "https://images.urbanoutfitters.com/is/image/UrbanOutfitters/39763123_092_b?$xlarge$&hei=900&qlt=80&fit=constrain",\
@@ -276,7 +302,7 @@ class UrbPage(MerchantPage):
 class ZaraPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
-        'Zara',\
+        'Z A R A',\
         'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
         'This is where our opinion will go',\
         'images/zara.png',\
