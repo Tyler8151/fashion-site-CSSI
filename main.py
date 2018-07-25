@@ -10,9 +10,28 @@ jinja_current_directory = jinja2.Environment(
     loader = jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions = ['jinja2.ext.autoescape'],
     autoescape = True)
+merchList = [
+{'link': "/H&M", "id": "hm"},
+{'link': "/Aeropostale", "id": "aero"},
+{'link': '/AmericanEagle', 'id': 'AE'},
+{'link': '/AmericanApparel', 'id': 'AA'},
+{'link': '/Hollister', 'id': 'holl'},
+{'link': '/BananaRepublic', 'id': 'banana'},
+{'link': '/Bloomingdales', 'id': 'bloom'},
+{'link': '/Express', 'id': 'exp'},
+{'link': '/Forever21', 'id': 'f21'},
+{'link': '/Gap', 'id': 'Gap'},
+{'link': '/LuluLemon', 'id': 'Lulu'},
+{'link': '/OldNavy', 'id': 'old'},
+{'link': '/Uniqlo', 'id': 'Un'},
+{'link': '/UrbanOutFitters', 'id': 'urb'},
+{'link': '/Zara', 'id': 'zara'},
+]
 
+homepage_data={'merchList': merchList, 'user': 'Sign in/Join', 'logout': '' }
 
 User.query().fetch()
+
 
 
 
@@ -74,26 +93,6 @@ class MerchantPage(webapp2.RequestHandler):
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
-        merchList = [
-        {'link': "/H&M", "id": "hm"},
-        {'link': "/Aeropostale", "id": "aero"},
-        {'link': '/AmericanEagle', 'id': 'AE'},
-        {'link': '/AmericanApparel', 'id': 'AA'},
-        {'link': '/Hollister', 'id': 'holl'},
-        {'link': '/BananaRepublic', 'id': 'banana'},
-        {'link': '/Bloomingdales', 'id': 'bloom'},
-        {'link': '/Express', 'id': 'exp'},
-        {'link': '/Forever21', 'id': 'f21'},
-        {'link': '/Gap', 'id': 'Gap'},
-        {'link': '/LuluLemon', 'id': 'Lulu'},
-        {'link': '/OldNavy', 'id': 'old'},
-        {'link': '/Uniqlo', 'id': 'Un'},
-        {'link': '/UrbanOutFitters', 'id': 'urb'},
-        {'link': '/Zara', 'id': 'zara'},
-        ]
-
-
-        homepage_data={'merchList': merchList, 'user': 'Sign in/Join', 'logout': '' }
 
         main_template= jinja_current_directory.get_template('templates/homepg.html')
         self.response.write(main_template.render(homepage_data))
@@ -103,7 +102,8 @@ class LogPage(webapp2.RequestHandler):
         log_template= jinja_current_directory.get_template('templates/login-out.html')
         self.response.write(log_template.render())
 
-    def post(self):
+    def post(self):        
+
         user_name = self.request.get('username')
         password = self.request.get('password')
 
@@ -113,8 +113,8 @@ class LogPage(webapp2.RequestHandler):
         for user in user_query:
             print user
             if user_name == user.user_name and password == user.password:
-                title_dict['user'] = 'Hello, %s!' % (user.real_name)
-                title_dict['logout'] = 'Log out'
+                homepage_data['user'] = 'Hello, %s!' % (user.real_name)
+                homepage_data['logout'] = 'Log out'
                 return self.redirect('/')
 
 
