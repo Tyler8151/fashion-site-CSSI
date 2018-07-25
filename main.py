@@ -10,7 +10,7 @@ jinja_current_directory = jinja2.Environment(
     extensions = ['jinja2.ext.autoescape'],
     autoescape = True)
 
-comment_query = Comment.query().fetch()
+
 User.query().fetch()
 
 
@@ -34,7 +34,7 @@ merchList = [
 ]
 
 
-title_dict={'title': "", "desc": "",'opinion': "", 'logo': "", 'all_comments': comment_query, 'merchList': merchList, 'user': 'Sign in/Join', 'logout': '' }
+title_dict={'title': "", "desc": "",'opinion': "", 'logo': "", 'all_comments': Comment.query().fetch(), 'merchList': merchList, 'user': 'Sign in/Join', 'logout': '' }
 
 
 
@@ -57,7 +57,7 @@ class MerchantPage(webapp2.RequestHandler):
         {'link': '/UrbanOutFitters', 'id': 'urb'},
         {'link': '/Zara', 'id': 'zara'},
         ]
-        self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'all_comments': comment_query, 'merchList': merchList, 'clothing': clothing, "image": image }
+        self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'all_comments': Comment.query().fetch(), 'merchList': merchList, 'clothing': clothing, "image": image }
         self.brand = brand
         self.initialize(request, response)
     def get(self):
@@ -76,7 +76,12 @@ class MerchantPage(webapp2.RequestHandler):
 
         amerApparel_comment = Comment(user=user1.real_name, content=comment, brand=self.brand)
         amerApparel_comment.put()
+        comment_list=Comment.query().fetch()
 
+        comment_list.append(amerApparel_comment)
+        print (comment_list)
+
+        self.title_dict['all_comments']=comment_list
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(self.title_dict))
 
