@@ -257,7 +257,10 @@ class OldPage(MerchantPage):
         'Old Navy was originally named Gap Warehouse, but was later renamed to become a separate entity. It was then established in March of 1994, when it was named after a bar in Paris.',\
         'This is where our opinion will go',\
         'images/old.png',\
-        'Old Navy', request, response)
+        'Old Navy',\
+        "https://oldnavy.gap.com/browse/product.do?cid=89219&pcid=20408&vid=1&pid=202834062",\
+        "https://oldnavy.gap.com/webcontent/0014/955/819/cn14955819.jpg",\
+         request, response)
 
 class UnPage(MerchantPage):
     def __init__(self,request,response):
@@ -266,7 +269,10 @@ class UnPage(MerchantPage):
         'Uniqlo embraces the simplicity, longevity, and quality of Japanese values - and that is evident in their wide selection of affordable apparel. Enthusiasts familiar with popular clothing lines such as H&M or Forever 21 will feel right at home with Uniqlos unique approach to subtlety.',\
         'This is where our opinion will go',\
         'images/uni.png',\
-        'Uniqlo', request, response)
+        'Uniqlo',\
+        "https://www.uniqlo.com/us/en/men-denim-jogger-pants-405640.html?dwvar_405640_color=COL68&cgid=men-multibuy-pants-and-jeans#start=31&cgid=men-multibuy-pants-and-jeans",\
+        "https://uniqlo.scene7.com/is/image/UNIQLO/goods_68_405640?$pdp-medium$",\
+         request, response)
 
 class UrbPage(MerchantPage):
     def __init__(self,request,response):
@@ -275,7 +281,10 @@ class UrbPage(MerchantPage):
         'Owned by Richard Hayne, urban outfitters headquarters is located in Philly, Pennsylvania. There are a total of 402 retail stores, and mostly selling what is known as "hipster clothing".',\
         'This is where our opinion will go',\
         'images/uni.png',\
-        'Urban OutFitters', request, response)
+        'Urban OutFitters',\
+        "https://www.urbanoutfitters.com/shop/bdg-core-denim-trucker-jacket-001?category=mens-jackets&color=092",\
+        "https://images.urbanoutfitters.com/is/image/UrbanOutfitters/39763123_092_b?$xlarge$&hei=900&qlt=80&fit=constrain",\
+         request, response)
 
 class ZaraPage(MerchantPage):
     def __init__(self,request,response):
@@ -284,7 +293,10 @@ class ZaraPage(MerchantPage):
         'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
         'This is where our opinion will go',\
         'images/zara.png',\
-        'Zara', request, response)
+        'Zara',\
+        "https://www.zara.com/us/en/mixed-ribbed-blouse-p07563246.html?v1=6778122&v2=1074623",\
+        "https://static.zara.net/photos///2018/I/0/1/p/7563/246/800/2/w/1024/7563246800_1_1_1.jpg?ts=1532071894414",\
+         request, response)
 
 class AboutPage(webapp2.RequestHandler):
     def get(self):
