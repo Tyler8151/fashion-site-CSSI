@@ -137,7 +137,11 @@ class AeroPage(MerchantPage):
         'Aeropostale',\
         "http://www.aeropostale.com/skinny-medium-wash-stretch-jean/64131354.html?dwvar_64131354_color=962&cgid=",\
         "http://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dwdffd5f1d/64131354_962_main.jpg?sw=2000&sh=2000&sm=fit&sfrm=jpg",\
-         request, response)
+        "http://www.aeropostale.com/twill-midi-shorts/85133626.html?dwvar_85133626_color=102&cgid=girls-bottoms-shorts#content=HP_aSpot&start=2",\
+        "http://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dw03c39ae5/85133626_102_main.jpg?sw=2000&sh=2000&sm=fit&sfrm=jpg",\
+        "http://www.aeropostale.com/free-state-japanese-girl-power-graphic-tee/80104358.html?dwvar_80104358_color=102&cgid=girls-tops-graphictees#start=4",\
+        "http://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dw86c73a8d/80104358_102_main.jpg?sw=2000&sh=2000&sm=fit&sfrm=jpg",\
+        request, response)
 
 class AmerEaglePage(MerchantPage):
     def __init__(self,request,response):
@@ -149,6 +153,10 @@ class AmerEaglePage(MerchantPage):
         'American Eagle',\
         "https://www.ae.com/women-aeo-velvet-double-strap-sandal-mustard/web/s-prod/1415_4051_284?cm=sUS-cUSD&catId=cat7900075",\
         "https://s7d2.scene7.com/is/image/aeo/1415_4051_284_f?$PDP_78_Main$",\
+        "https://www.ae.com/women-ae-smocked-crop-top-navy/web/s-prod/2352_9283_410?cm=sUS-cUSD&catId=cat8420021",\
+        "https://s7d2.scene7.com/is/image/aeo/2352_9283_410_of?$PDP_78_Main$",\
+        "https://www.ae.com/men-jeans-ae-flex-skinny-jean-dark-rinse/web/s-prod/0119_4598_534?cm=sUS-cUSD&catId=cat6430041",\
+        "https://s7d2.scene7.com/is/image/aeo/0119_4598_534_of?$PDP_78_Main$",\
          request, response)
 
 class AmerApparelPage(MerchantPage):
