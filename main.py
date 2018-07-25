@@ -33,7 +33,7 @@ merchList = [
 ]
 
 
-title_dict={'title': "", "desc": "",'opinion': "", 'logo': "", 'all_comments': comment_query, 'merchList': merchList, 'user': 'Sign in/Join' }
+title_dict={'title': "", "desc": "",'opinion': "", 'logo': "", 'all_comments': comment_query, 'merchList': merchList, 'user': 'Sign in/Join', 'logout': '' }
 
 
 
@@ -82,15 +82,6 @@ class HomePage(webapp2.RequestHandler):
         main_template= jinja_current_directory.get_template('templates/homepg.html')
         self.response.write(main_template.render(title_dict))
 
-class UserHome(webapp2.RequestHandler):
-    def get(self):
-        user_dict = {
-        'user': user1.real_name,
-        }
-        user_template = \
-        log_template= jinja_current_directory.get_template('templates/homepg.html')
-        self.response.write(log_template.render(user_dict))
-
 class LogPage(webapp2.RequestHandler):
     def get(self):
         log_template= jinja_current_directory.get_template('templates/login-out.html')
@@ -107,6 +98,7 @@ class LogPage(webapp2.RequestHandler):
             print user
             if user_name == user.user_name and password == user.password:
                 title_dict['user'] = 'Hello, %s!' % (user.real_name)
+                title_dict['logout'] = 'Log out'
                 return self.redirect('/')
 
 
@@ -302,6 +294,7 @@ class SignUpHandler(webapp2.RequestHandler):
         user1.put()
 
         title_dict['user'] = 'Hello, %s!' % (user1.real_name)
+        title_dict['logout'] = 'Log out'
 
         self.redirect('/')
 
