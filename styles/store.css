@@ -1,45 +1,34 @@
-#a1{
-
+#a1 {
   height: 20%;
   width: 20%;
-
-
 }
 
-
-h1{
+h1 {
   display: flex;
   justify-content: center;
-
 }
 
-h2{
+h2 {
 display flex;
 text-align: center;
-
 }
-#desc{
+
+#desc {
 text-align: center;
-
-
 }
-#logo{
+
+#logo {
   display: flex;
   justify-content: flex-start;
 width: 100px;
 height: 100px;
-
-
-
-
 }
-h3{
+
+h3 {
 text-align: center;
-
 }
-#hm1{
+
+#hm1 {
 height: 100px;
 width: 100px;
-
-
 }
