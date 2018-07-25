@@ -138,7 +138,7 @@ class AmerEaglePage(MerchantPage):
         'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
         'This is where our opinion will go',\
         'images/americaneagle.svg.png',\
-        'American Eagle'\
+        'American Eagle',\
         "https://www.ae.com/women-aeo-velvet-double-strap-sandal-mustard/web/s-prod/1415_4051_284?cm=sUS-cUSD&catId=cat7900075",\
         "https://s7d2.scene7.com/is/image/aeo/1415_4051_284_f?$PDP_78_Main$",\
          request, response)
@@ -150,7 +150,10 @@ class AmerApparelPage(MerchantPage):
         'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
         'This is where our opinion will go',\
         'images/americanapparel.png',\
-        'American Apparel', request, response)
+        'American Apparel',\
+        "http://www.americanapparel.com/en/california-fleece-slim-fit-jogger_rsa54240w?c=Black",\
+        "http://s7d9.scene7.com/is/image/AmericanApparel/rsa54240w_black?defaultImage=/notavail",\
+         request, response)
 
 class BananaPage(MerchantPage):
     def __init__(self,request,response):
@@ -159,7 +162,10 @@ class BananaPage(MerchantPage):
         'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
         'This is where our opinion will go',\
         'images/banana.png',\
-        'Banana Republic', request, response)
+        'Banana Republic',\
+        "https://bananarepublic.gap.com/browse/product.do?cid=1105432&pcid=48422&vid=1&pid=363282002",\
+        "https://bananarepublic.gap.com/webcontent/0015/519/127/cn15519127.jpg",\
+         request, response)
 
 class BloomPage(MerchantPage):
     def __init__(self,request,response):
@@ -216,7 +222,10 @@ class HollPage(MerchantPage):
         'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
         'This is where our opinion will go',\
         'images/hollister.png',\
-        'Hollister', request, response)
+        'Hollister',\
+        "https://www.hollisterco.com/shop/us/p/-11904789?categoryId=12600&seq=03&faceout=model",\
+        "https://anf.scene7.com/is/image/anf/hol_215416_03_model1?$product-ofp-hol-v1$",\
+         request, response)
 
 class LuluPage(MerchantPage):
     def __init__(self,request,response):
