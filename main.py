@@ -4,6 +4,7 @@ import webapp2
 from models import User
 from models import Comment
 from google.appengine.api import users
+from time import sleep
 
 jinja_current_directory = jinja2.Environment(
     loader = jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -15,31 +16,42 @@ User.query().fetch()
 
 
 
-merchList = [
-{'link': "/H&M", "id": "hm"},
-{'link': "/Aeropostale", "id": "aero"},
-{'link': '/AmericanEagle', 'id': 'AE'},
-{'link': '/AmericanApparel', 'id': 'AA'},
-{'link': '/Hollister', 'id': 'holl'},
-{'link': '/BananaRepublic', 'id': 'banana'},
-{'link': '/Bloomingdales', 'id': 'bloom'},
-{'link': '/Express', 'id': 'exp'},
-{'link': '/Forever21', 'id': 'f21'},
-{'link': '/Gap', 'id': 'Gap'},
-{'link': '/LuluLemon', 'id': 'Lulu'},
-{'link': '/OldNavy', 'id': 'old'},
-{'link': '/Uniqlo', 'id': 'Un'},
-{'link': '/UrbanOutFitters', 'id': 'urb'},
-{'link': '/Zara', 'id': 'zara'},
-]
 
-
-title_dict={'title': "", "desc": "",'opinion': "", 'logo': "", 'all_comments': Comment.query().fetch(), 'merchList': merchList, 'user': 'Sign in/Join', 'logout': '' }
 
 
 
 class MerchantPage(webapp2.RequestHandler):
     def __init__(self, title, description, opinion, logo, brand, clothing, image, request, response):
+
+        self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'clothing': clothing, "image": image }
+        self.brand = brand
+        self.initialize(request, response)
+    def get(self):
+
+        self.title_dict['comments'] = Comment.query().filter(Comment.brand == self.brand).fetch()
+        home_template= jinja_current_directory.get_template('templates/store.html')
+        self.response.write(home_template.render(self.title_dict))
+
+    def post(self):
+
+
+        comment = self.request.get('comment')
+        name = self.request.get('name')
+        username = self.request.get('username')
+        email = self.request.get('email')
+        password = self.request.get('password')
+
+        user1 = User(user_name=username, real_name=name, email=email, password=password)
+
+        amerApparel_comment = Comment(user=user1.real_name, content=comment, brand=self.brand)
+        amerApparel_comment.put()
+
+        sleep(1)
+
+        self.get()
+
+class HomePage(webapp2.RequestHandler):
+    def get(self):
         merchList = [
         {'link': "/H&M", "id": "hm"},
         {'link': "/Aeropostale", "id": "aero"},
@@ -57,42 +69,12 @@ class MerchantPage(webapp2.RequestHandler):
         {'link': '/UrbanOutFitters', 'id': 'urb'},
         {'link': '/Zara', 'id': 'zara'},
         ]
-        self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'all_comments': Comment.query().fetch(), 'merchList': merchList, 'clothing': clothing, "image": image }
-        self.brand = brand
-        self.initialize(request, response)
-    def get(self):
-        home_template= jinja_current_directory.get_template('templates/store.html')
-        self.response.write(home_template.render(self.title_dict))
 
-    def post(self):
 
-        comment = self.request.get('comment')
-        name = self.request.get('name')
-        username = self.request.get('username')
-        email = self.request.get('email')
-        password = self.request.get('password')
+        homepage_data={'merchList': merchList, 'user': 'Sign in/Join', 'logout': '' }
 
-        user1 = User(user_name=username, real_name=name, email=email, password=password)
-
-        amerApparel_comment = Comment(user=user1.real_name, content=comment, brand=self.brand)
-        amerApparel_comment.put()
-        comment_list=Comment.query().fetch()
-
-        comment_list.append(amerApparel_comment)
-        print (comment_list)
-
-        self.title_dict['all_comments']=comment_list
-        home_template= jinja_current_directory.get_template('templates/store.html')
-        self.response.write(home_template.render(self.title_dict))
-
-class HomePage(webapp2.RequestHandler):
-    def get(self):
         main_template= jinja_current_directory.get_template('templates/homepg.html')
-        self.response.write(main_template.render(title_dict))
-
-    def post(self):
-        main_template= jinja_current_directory.get_template('templates/homepg.html')
-        self.response.write(main_template.render(title_dict))
+        self.response.write(main_template.render(homepage_data))
 
 class LogPage(webapp2.RequestHandler):
     def get(self):
