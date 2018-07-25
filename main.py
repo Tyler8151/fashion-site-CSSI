@@ -166,7 +166,10 @@ class BloomPage(MerchantPage):
         "Although a bit on the pricier side, Bloomingdales expectations of quality apparel exceeds that of its many major competitors. Bloomingdales robust collection of jewelry, accessories, clothing, and handbags makes it a top retailer on many fashion enthusiasts radars. If your fashion standards only demand to be beaten, then Bloomingdales is your one-stop style shop.",\
         'This is where our opinion will go',\
         'images/bloom.png',\
-        'Bloomingdales', request, response)
+        'Bloomingdales',\
+        "https://www.bloomingdales.com/shop/product/michael-michael-kors-kelsey-large-nylon-backpack?ID=2854882&CategoryID=1000369#fn=ppp%3Dundefined%26sp%3D1%26rId%3D132%26spc%3D228%26spp%3D7%26pn%3D1%7C3%7C7%7C228%26rsid%3Dundefined%26smp%3DmatchNone",\
+        "https://images.bloomingdalesassets.com/is/image/BLM/products/0/optimized/9761510_fpx.tif?wid=1200&qlt=90,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg",\
+         request, response)
 
 class ExpressPage(MerchantPage):
     def __init__(self,request,response):
