@@ -21,11 +21,11 @@ User.query().fetch()
 
 
 class MerchantPage(webapp2.RequestHandler):
-<<<<<<< HEAD
+
     def __init__(self, title, description, opinion, logo, brand, clothing, image, request, response):
 
         self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'clothing': clothing, "image": image }
-=======
+
     def __init__(self, title, description, opinion, logo, brand, clothing, image, clothing2, image2, clothing3, image3, request, response):
         merchList = [
         {'link': "/H&M", "id": "hm"},
@@ -45,7 +45,7 @@ class MerchantPage(webapp2.RequestHandler):
         {'link': '/Zara', 'id': 'zara'},
         ]
         self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'all_comments': Comment.query().fetch(), 'merchList': merchList, 'clothing': clothing, "image": image, 'clothing2': clothing2, 'image2': image2, 'clothing3': clothing3, "image3": image3}
->>>>>>> 4b33b90c1196a5de76a24785b0f34a995593fb08
+
         self.brand = brand
         self.initialize(request, response)
     def get(self):
