@@ -1,3 +1,4 @@
+
 h1 {
   text-align: center;
   font-family: "Palatino", serif;
@@ -46,6 +47,63 @@ span {
 }
 
 #description {
+  text-align: center;
+  line-height: 20px;
+  width: 60%;
+  font-family: "Palatino", serif;
+  font-size: 17px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Palatino", serif;
+  font-size: 25px;
+  border-spacing: inherit;
+  padding-bottom: 15px;
+  border-bottom: solid;
+  border-bottom-color: whitesmoke;
+}
+
+h3 {
+  text-align: center;
+  font-family: "Palatino", serif;
+  font-size: 25px;
+  border-spacing: inherit;
+  padding-bottom: 15px;
+  border-bottom: solid;
+  border-bottom-color: whitesmoke;
+}
+
+h4 {
+  text-align: center;
+  font-family: "Palatino", serif;
+  font-size: 25px;
+  border-spacing: inherit;
+  padding-bottom: 15px;
+  border-bottom: solid;
+  border-bottom-color: whitesmoke;
+}
+
+#cbyc {
+  text-align: center;
+  line-height: 20px;
+  width: 60%;
+  font-family: "Palatino", serif;
+  font-size: 17px;
+  margin: auto;
+}
+
+#persona {
+  text-align: center;
+  line-height: 20px;
+  width: 60%;
+  font-family: "Palatino", serif;
+  font-size: 17px;
+  margin: auto;
+}
+
+#inspo {
   text-align: center;
   line-height: 20px;
   width: 60%;
