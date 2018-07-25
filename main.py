@@ -3,6 +3,7 @@ import os
 import webapp2
 from models import User
 from models import Comment
+from google.appengine.api import users
 
 jinja_current_directory = jinja2.Environment(
     loader = jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -66,6 +67,12 @@ class MerchantPage(webapp2.RequestHandler):
     def post(self):
 
         comment = self.request.get('comment')
+        name = self.request.get('name')
+        username = self.request.get('username')
+        email = self.request.get('email')
+        password = self.request.get('password')
+
+        user1 = User(user_name=username, real_name=name, email=email, password=password)
 
         amerApparel_comment = Comment(user=user1.real_name, content=comment, brand=self.brand)
         amerApparel_comment.put()
@@ -321,6 +328,7 @@ class SignUpHandler(webapp2.RequestHandler):
         title_dict['logout'] = 'Log out'
 
         self.redirect('/')
+
 
 
 
