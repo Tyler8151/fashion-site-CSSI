@@ -102,7 +102,7 @@ class LogPage(webapp2.RequestHandler):
         log_template= jinja_current_directory.get_template('templates/login-out.html')
         self.response.write(log_template.render())
 
-    def post(self):        
+    def post(self):
 
         user_name = self.request.get('username')
         password = self.request.get('password')
@@ -169,6 +169,10 @@ class AmerApparelPage(MerchantPage):
         'American Apparel',\
         "http://www.americanapparel.com/en/california-fleece-slim-fit-jogger_rsa54240w?c=Black",\
         "http://s7d9.scene7.com/is/image/AmericanApparel/rsa54240w_black?defaultImage=/notavail",\
+        'http://www.americanapparel.com/en/the-easy-jean_rsams3334w?c=Dark%20Wash',\
+        'http://s7d9.scene7.com/is/image/AmericanApparel/rsams3334w_darkwash_04',\
+        'http://www.americanapparel.com/en/peppered-fleece-pullover-hoodie_mt498w?c=Peppered%20Cranberry',\
+        'http://s7d9.scene7.com/is/image/AmericanApparel/mt498w_pepperedcranberry?defaultImage=/notavail',\
          request, response)
 
 class BananaPage(MerchantPage):
@@ -181,6 +185,10 @@ class BananaPage(MerchantPage):
         'Banana Republic',\
         "https://bananarepublic.gap.com/browse/product.do?cid=1105432&pcid=48422&vid=1&pid=363282002",\
         "https://bananarepublic.gap.com/webcontent/0015/519/127/cn15519127.jpg",\
+        'https://bananarepublic.gap.com/browse/product.do?cid=1107722&pcid=1107721&vid=1&pid=361080002',\
+        'https://bananarepublic.gap.com/webcontent/0015/628/446/cn15628446.jpg',\
+        'https://bananarepublic.gap.com/browse/product.do?cid=1093558&pcid=29818&vid=1&pid=266976012',\
+        'https://bananarepublic.gap.com/webcontent/0014/573/883/cn14573883.jpg',\
          request, response)
 
 class BloomPage(MerchantPage):
@@ -193,6 +201,10 @@ class BloomPage(MerchantPage):
         'Bloomingdales',\
         "https://www.bloomingdales.com/shop/product/michael-michael-kors-kelsey-large-nylon-backpack?ID=2854882&CategoryID=1000369#fn=ppp%3Dundefined%26sp%3D1%26rId%3D132%26spc%3D228%26spp%3D7%26pn%3D1%7C3%7C7%7C228%26rsid%3Dundefined%26smp%3DmatchNone",\
         "https://images.bloomingdalesassets.com/is/image/BLM/products/0/optimized/9761510_fpx.tif?wid=1200&qlt=90,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg",\
+        'https://www.bloomingdales.com/shop/product/aqua-freedom-whisper-hoop-earrings-100-exclusive?ID=1778332&CategoryID=3628#fn=ppp%3Dundefined%26sp%3D1%26rId%3D132%26spc%3D1641%26spp%3D2%26pn%3D1%7C19%7C2%7C1641%26rsid%3Dundefined%26smp%3DmatchNone',\
+        'https://images.bloomingdalesassets.com/is/image/BLM/products/4/optimized/9199134_fpx.tif?wid=1200&qlt=90,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg',\
+        'https://www.bloomingdales.com/shop/product/ag-jacket-robyn-denim?ID=919022&CategoryID=1001521#fn=ppp%3Dundefined%26sp%3D1%26rId%3D132%26spc%3D1203%26spp%3D18%26pn%3D1%7C14%7C18%7C1203%26rsid%3Dundefined%26smp%3DmatchNone',\
+        'https://images.bloomingdalesassets.com/is/image/BLM/products/5/optimized/8452505_fpx.tif?wid=1200&qlt=90,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg',\
          request, response)
 
 class ExpressPage(MerchantPage):
@@ -205,6 +217,10 @@ class ExpressPage(MerchantPage):
         'Express',\
         "https://www.express.com/clothing/men/double-knit-exp-hem-hoodie/pro/05327570/color/BLACK",\
         "https://images.express.com/is/image/expressfashion/0022_05327570_0058_f028?cache=on&wid=960&fmt=jpeg&qlt=85,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",\
+        'https://www.express.com/clothing/men/extra-slim-blue-cotton-sateen-stretch-suit-jacket/pro/04371540/color/BLUE',\
+        'https://images.express.com/is/image/expressfashion/0039_04371540_1837_a115?cache=on&wid=960&fmt=jpeg&qlt=85,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon',\
+        'https://www.express.com/clothing/men/classic-fit-10-inch-belted-flat-front-shorts/pro/03532981/color/WHITE',\
+        'https://images.express.com/is/image/expressfashion/0026_03532981_0001_e1_f019?cache=on&wid=960&fmt=jpeg&qlt=85,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon',\
          request, response)
 
 class F21Page(MerchantPage):
