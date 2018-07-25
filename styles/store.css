@@ -9,26 +9,44 @@ h1 {
 }
 
 h2 {
-display flex;
-text-align: center;
+  display flex;
+  text-align: center;
 }
 
 #desc {
-text-align: center;
+  text-align: center;
+  line-height: 20px;
+  width: 60%;
+  font-family: "Palatino", serif;
+  font-size: 17px;
+  margin: auto;
 }
 
 #logo {
   display: flex;
   justify-content: flex-start;
-width: 100px;
-height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 h3 {
-text-align: center;
+  text-align: center;
+}
+
+#routespace {
+  flex: 10 10 auto;
+}
+
+#routes {
+  display: flex;
+  width: 100%;
+}
+
+.routechild {
+  flex: 1%;
 }
 
 #hm1 {
-height: 100px;
-width: 100px;
+  height: 100px;
+  width: 100px;
 }
