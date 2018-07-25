@@ -1,16 +1,38 @@
 #a1 {
-  height: 20%;
-  width: 20%;
+  height: 10%;
+  width: 10%;
 }
 
 h1 {
   display: flex;
   justify-content: center;
+  border-spacing: inherit;
+  padding-bottom: 15px;
+  border-bottom: solid;
+  border-bottom-color: whitesmoke;
 }
 
 h2 {
-  display flex;
   text-align: center;
+  font-family: "Palatino", serif;
+  font-size: 30px;
+}
+
+span {
+  font-size: 30px;
+  color: red;
+  font-family: cursive;
+  font-size: 50px;
+}
+
+h3 {
+  text-align: center;
+  font-family: "Palatino", serif;
+  font-size: 25px;
+  border-spacing: inherit;
+  padding-bottom: 15px;
+  border-bottom: solid;
+  border-bottom-color: whitesmoke;
 }
 
 #desc {
@@ -22,28 +44,22 @@ h2 {
   margin: auto;
 }
 
-#logo {
-  display: flex;
-  justify-content: flex-start;
-  width: 100px;
-  height: 100px;
-}
-
-h3 {
-  text-align: center;
-}
-
-#routespace {
-  flex: 10 10 auto;
-}
-
 #routes {
   display: flex;
   width: 100%;
 }
 
 .routechild {
-  flex: 1%;
+  flex: 20%;
+}
+
+#homepg {
+  flex: 1 1 auto;
+  padding: 0;
+  background: none;
+  border: none;
+  font-family: "Palatino", serif;
+  font-size: 15px;
 }
 
 #hm1 {

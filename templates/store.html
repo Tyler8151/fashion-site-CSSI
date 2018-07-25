@@ -7,24 +7,16 @@
   </head>
   <body>
     <div id="routes">
-      <div id="routespace">
-      </div>
-      <form class="routechild" method = 'post' action='/log'>
-        <button id="loginout">Sign in/Join</button>
-      </form>
       <form class="routechild" method = 'post' action='/'>
         <button id="homepg">Home</button>
       </form>
     </div>
-    <form method='post' action='/'>
-      <input type='submit' value='back'>
-      <h1><img id= "a1" src="{{logo}}"></h1>
-    </form>
-    <h2> About {{title}} </h2>
+    <h1><img id= "a1" src="{{logo}}"></h1>
+    <h2>{{title}}<span> about</span></h2>
     <div id="desc">
       <p>{{desc}}</p>
     </div>
-    <h2> SA's Opinion</h2>
+    <h3>T R E N D I N G - I T E M S</h3>
     <a  id="images" href={{clothing}} title="Bib Overall Dress" class="product-item-link">
       <img width="222" height="333" src={{image}} class="product-item-image swipe-expose-item-image" alt="Bib Overall Dress">
     </a>
