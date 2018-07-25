@@ -4,17 +4,12 @@ import webapp2
 from models import User
 from models import Comment
 from google.appengine.api import users
+from time import sleep
 
 jinja_current_directory = jinja2.Environment(
     loader = jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions = ['jinja2.ext.autoescape'],
     autoescape = True)
-
-
-User.query().fetch()
-
-
-
 merchList = [
 {'link': "/H&M", "id": "hm"},
 {'link': "/Aeropostale", "id": "aero"},
@@ -33,13 +28,24 @@ merchList = [
 {'link': '/Zara', 'id': 'zara'},
 ]
 
+homepage_data={'merchList': merchList, 'user': 'Sign in/Join', 'logout': '' }
 
-title_dict={'title': "", "desc": "",'opinion': "", 'logo': "", 'all_comments': Comment.query().fetch(), 'merchList': merchList, 'user': 'Sign in/Join', 'logout': '' }
+User.query().fetch()
+
+
+
+
+
 
 
 
 class MerchantPage(webapp2.RequestHandler):
+
     def __init__(self, title, description, opinion, logo, brand, clothing, image, request, response):
+
+        self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'clothing': clothing, "image": image }
+
+    def __init__(self, title, description, opinion, logo, brand, clothing, image, clothing2, image2, clothing3, image3, request, response):
         merchList = [
         {'link': "/H&M", "id": "hm"},
         {'link': "/Aeropostale", "id": "aero"},
@@ -57,14 +63,18 @@ class MerchantPage(webapp2.RequestHandler):
         {'link': '/UrbanOutFitters', 'id': 'urb'},
         {'link': '/Zara', 'id': 'zara'},
         ]
-        self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'all_comments': Comment.query().fetch(), 'merchList': merchList, 'clothing': clothing, "image": image }
+        self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'all_comments': Comment.query().fetch(), 'merchList': merchList, 'clothing': clothing, "image": image, 'clothing2': clothing2, 'image2': image2, 'clothing3': clothing3, "image3": image3}
+
         self.brand = brand
         self.initialize(request, response)
     def get(self):
+
+        self.title_dict['comments'] = Comment.query().filter(Comment.brand == self.brand).fetch()
         home_template= jinja_current_directory.get_template('templates/store.html')
         self.response.write(home_template.render(self.title_dict))
 
     def post(self):
+
 
         comment = self.request.get('comment')
         name = self.request.get('name')
@@ -76,30 +86,24 @@ class MerchantPage(webapp2.RequestHandler):
 
         amerApparel_comment = Comment(user=user1.real_name, content=comment, brand=self.brand)
         amerApparel_comment.put()
-        comment_list=Comment.query().fetch()
 
-        comment_list.append(amerApparel_comment)
-        print (comment_list)
+        sleep(1)
 
-        self.title_dict['all_comments']=comment_list
-        home_template= jinja_current_directory.get_template('templates/store.html')
-        self.response.write(home_template.render(self.title_dict))
+        self.get()
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
-        main_template= jinja_current_directory.get_template('templates/homepg.html')
-        self.response.write(main_template.render(title_dict))
 
-    def post(self):
         main_template= jinja_current_directory.get_template('templates/homepg.html')
-        self.response.write(main_template.render(title_dict))
+        self.response.write(main_template.render(homepage_data))
 
 class LogPage(webapp2.RequestHandler):
     def get(self):
         log_template= jinja_current_directory.get_template('templates/login-out.html')
         self.response.write(log_template.render())
 
-    def post(self):
+    def post(self):        
+
         user_name = self.request.get('username')
         password = self.request.get('password')
 
@@ -109,8 +113,8 @@ class LogPage(webapp2.RequestHandler):
         for user in user_query:
             print user
             if user_name == user.user_name and password == user.password:
-                title_dict['user'] = 'Hello, %s!' % (user.real_name)
-                title_dict['logout'] = 'Log out'
+                homepage_data['user'] = 'Hello, %s!' % (user.real_name)
+                homepage_data['logout'] = 'Log out'
                 return self.redirect('/')
 
 
@@ -133,7 +137,11 @@ class AeroPage(MerchantPage):
         'Aeropostale',\
         "http://www.aeropostale.com/skinny-medium-wash-stretch-jean/64131354.html?dwvar_64131354_color=962&cgid=",\
         "http://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dwdffd5f1d/64131354_962_main.jpg?sw=2000&sh=2000&sm=fit&sfrm=jpg",\
-         request, response)
+        "http://www.aeropostale.com/twill-midi-shorts/85133626.html?dwvar_85133626_color=102&cgid=girls-bottoms-shorts#content=HP_aSpot&start=2",\
+        "http://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dw03c39ae5/85133626_102_main.jpg?sw=2000&sh=2000&sm=fit&sfrm=jpg",\
+        "http://www.aeropostale.com/free-state-japanese-girl-power-graphic-tee/80104358.html?dwvar_80104358_color=102&cgid=girls-tops-graphictees#start=4",\
+        "http://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dw86c73a8d/80104358_102_main.jpg?sw=2000&sh=2000&sm=fit&sfrm=jpg",\
+        request, response)
 
 class AmerEaglePage(MerchantPage):
     def __init__(self,request,response):
@@ -145,6 +153,10 @@ class AmerEaglePage(MerchantPage):
         'American Eagle',\
         "https://www.ae.com/women-aeo-velvet-double-strap-sandal-mustard/web/s-prod/1415_4051_284?cm=sUS-cUSD&catId=cat7900075",\
         "https://s7d2.scene7.com/is/image/aeo/1415_4051_284_f?$PDP_78_Main$",\
+        "https://www.ae.com/women-ae-smocked-crop-top-navy/web/s-prod/2352_9283_410?cm=sUS-cUSD&catId=cat8420021",\
+        "https://s7d2.scene7.com/is/image/aeo/2352_9283_410_of?$PDP_78_Main$",\
+        "https://www.ae.com/men-jeans-ae-flex-skinny-jean-dark-rinse/web/s-prod/0119_4598_534?cm=sUS-cUSD&catId=cat6430041",\
+        "https://s7d2.scene7.com/is/image/aeo/0119_4598_534_of?$PDP_78_Main$",\
          request, response)
 
 class AmerApparelPage(MerchantPage):
@@ -229,7 +241,11 @@ class HMPage(MerchantPage):
         'H&M',\
         "http://www2.hm.com/en_us/productpage.0631735001.html",\
         "http://lp2.hm.com/hmgoepprod?set=source[/8a/5c/8a5c6a561d73203b2b0b8c6faf5018583a34ccb9.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],hmver[1]&call=url[file:/product/style]",\
-         request, response)
+        "http://www2.hm.com/en_us/productpage.0441386004.html",\
+        "http://lp2.hm.com/hmgoepprod?set=source[/2b/3f/2b3f3e5934822ca955e4db065d8edf3e8961e167.jpg],origin[dam],category[men_trousers_joggers],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/fullscreen]",\
+        "http://www2.hm.com/en_us/productpage.0619580006.html",\
+        "http://lp2.hm.com/hmgoepprod?set=source[/4c/90/4c905aa7a0940191666f01bfa64b9458e41f298d.jpg],origin[dam],category[ladies_shorts],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/fullscreen]",\
+        request, response)
 
 class HollPage(MerchantPage):
     def __init__(self,request,response):
