@@ -6,12 +6,12 @@
     <link href='../styles/login-out.css' rel='stylesheet'>
   </head>
   <body>
-    <form method='post' action='/contact'>
+
     <div id='info'>
       <a href='/about'> About </a>
       <a href='/contact'>Contact Us</a>
     </div>
-  </form>
+
     <div id='all'>
       <div id='heading'>
         <h1> S T Y L E  -  A I D </h1>
@@ -19,21 +19,21 @@
       </div>
       <div>
         <label> Sign In</label><br>
-        <input type='text' value='username'> <br>
-        <input type='text' value='password'><br>
         <form method='post' action='/log'>
-          <input type='button' class='button' value='Submit'>
+          <input type='text' value='username' name='username'> <br>
+          <input type='text' value='password' name='password'><br>
+          <input type='submit' class='button' value='Submit'>
         </form>
       </div>
       <div>
         <label>Sign Up</label><br>
-        <input type='text' value='name'> <br>
-        <input type='text' value='username'><br>
-        <input type='text' value='email'><br>
-        <input type='text' value='password'><br>
-        <form method='post' action='/'>
-          <input type='button' class='button' value='Submit'>
-        </form>
+      <form method='post' action='/signup'>
+        <input type='text' value='name' name='name'> <br>
+        <input type='text' value='username' name='username'><br>
+        <input type='text' value='email' name='email'><br>
+        <input type='text' value='password' name='password'><br>
+        <input type='submit' class='button' value='Submit'>
+      </form>
       </div>
     </div>
   </body>

@@ -9,8 +9,8 @@
     <div id="routes">
       <div id="routespace">
       </div>
-      <form class="routechild" method = 'post' action='/log'>
-        <button id="loginout">Sign in/Join</button>
+      <form class="routechild"  action='/log'>
+        <button id="loginout">{{user}}</button>
       </form>
       <form class="routechild" method = 'post' action='/about'>
         <button id="about">About SA</button>
@@ -24,7 +24,7 @@
         <button id={{data.id}}></button>
       </a>
       {% endfor %}
-      
+
       <!-- <form class="store" method='post' action='/H&M'>
         <button id="hm"></button>
       </form>

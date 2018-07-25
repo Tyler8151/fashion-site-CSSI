@@ -10,6 +10,7 @@ jinja_current_directory = jinja2.Environment(
     autoescape = True)
 
 comment_query = Comment.query().fetch()
+User.query().fetch()
 
 
 
@@ -32,12 +33,12 @@ merchList = [
 ]
 
 
-title_dict={'title': "", "desc": "",'opinion': "", 'logo': "", 'all_comments': comment_query, 'merchList': merchList }
+title_dict={'title': "", "desc": "",'opinion': "", 'logo': "", 'all_comments': comment_query, 'merchList': merchList, 'user': 'Sign in/Join' }
 
 
 
 class MerchantPage(webapp2.RequestHandler):
-    def __init__(self, title, description, opinion, logo, brand, request, response, clothing):
+    def __init__(self, title, description, opinion, logo, brand, request, response):
         merchList = [
         {'link': "/H&M", "id": "hm"},
         {'link': "/Aeropostale", "id": "aero"},
@@ -55,7 +56,7 @@ class MerchantPage(webapp2.RequestHandler):
         {'link': '/UrbanOutFitters', 'id': 'urb'},
         {'link': '/Zara', 'id': 'zara'},
         ]
-        self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'all_comments': comment_query, 'merchList': merchList, 'clothing': clothing}
+        self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'all_comments': comment_query, 'merchList': merchList,}
         self.brand = brand
         self.initialize(request, response)
     def get(self):
@@ -66,7 +67,7 @@ class MerchantPage(webapp2.RequestHandler):
 
         comment = self.request.get('comment')
 
-        amerApparel_comment = Comment(content=comment, brand=self.brand)
+        amerApparel_comment = Comment(user=user1.real_name, content=comment, brand=self.brand)
         amerApparel_comment.put()
 
         home_template= jinja_current_directory.get_template('templates/store.html')
@@ -81,20 +82,42 @@ class HomePage(webapp2.RequestHandler):
         main_template= jinja_current_directory.get_template('templates/homepg.html')
         self.response.write(main_template.render(title_dict))
 
+class UserHome(webapp2.RequestHandler):
+    def get(self):
+        user_dict = {
+        'user': user1.real_name,
+        }
+        user_template = \
+        log_template= jinja_current_directory.get_template('templates/homepg.html')
+        self.response.write(log_template.render(user_dict))
+
 class LogPage(webapp2.RequestHandler):
     def get(self):
         log_template= jinja_current_directory.get_template('templates/login-out.html')
         self.response.write(log_template.render())
 
     def post(self):
-        email = self.request.get('email')
+        user_name = self.request.get('username')
         password = self.request.get('password')
-        name = self.request.get('name')
-        username = self.request.get('username')
+
+        #check that username and password are correct
+
+        user_query = User.query().fetch()
+        for user in user_query:
+            print user
+            if user_name == user.user_name and password == user.password:
+                title_dict['user'] = 'Hello, %s!' % (user.real_name)
+                return self.redirect('/')
 
 
-        log_template= jinja_current_directory.get_template('templates/login-out.html')
-        self.response.write(log_template.render())
+        self.response.write('Unauthorized')
+
+
+
+
+
+
+
 
 class AeroPage(MerchantPage):
     def __init__(self,request,response):
@@ -242,11 +265,13 @@ class AboutPage(webapp2.RequestHandler):
 class ConPage(webapp2.RequestHandler):
     def get(self):
         con_template= jinja_current_directory.get_template('templates/contact.html')
+        print("getting conpage")
         self.response.write(con_template.render())
 
     def post(self):
         con_template= jinja_current_directory.get_template('templates/contact.html')
-        self.response.write(con_template.render())
+        print ("posting conpage")
+        self.response.write(con_templaterender())
 
 class RecPage(webapp2.RequestHandler):
     def get(self):
@@ -255,6 +280,22 @@ class RecPage(webapp2.RequestHandler):
     def post(self):
         rec_template= jinja_current_directory.get_template('templates/rec.html')
         self.response.write(rec_template.render())
+
+class SignUpHandler(webapp2.RequestHandler):
+    def post(self):
+        name = self.request.get('name')
+        username = self.request.get('username')
+        email = self.request.get('email')
+        password = self.request.get('password')
+
+        user1 = User(user_name=username, real_name=name, email=email, password=password)
+
+        user1.put()
+
+        title_dict['user'] = 'Hello, %s!' % (user1.real_name)
+
+        self.redirect('/')
+
 
 
 
@@ -278,5 +319,6 @@ app = webapp2.WSGIApplication([
     ('/Zara',ZaraPage),
     ('/about',AboutPage),
     ('/contact',ConPage),
-    ('/recommend', RecPage)
+    ('/recommend', RecPage),
+    ('/signup', SignUpHandler),
 ], debug=True)
