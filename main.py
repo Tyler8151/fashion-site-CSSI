@@ -285,7 +285,7 @@ class UrbPage(MerchantPage):
         'Urban OutFitters',\
         'Owned by Richard Hayne, urban outfitters headquarters is located in Philly, Pennsylvania. There are a total of 402 retail stores, and mostly selling what is known as "hipster clothing".',\
         'This is where our opinion will go',\
-        'images/uni.png',\
+        'images/urb.png',\
         'Urban OutFitters',\
         "https://www.urbanoutfitters.com/shop/bdg-core-denim-trucker-jacket-001?category=mens-jackets&color=092",\
         "https://images.urbanoutfitters.com/is/image/UrbanOutfitters/39763123_092_b?$xlarge$&hei=900&qlt=80&fit=constrain",\
