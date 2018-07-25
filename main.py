@@ -39,7 +39,7 @@ title_dict={'title': "", "desc": "",'opinion': "", 'logo': "", 'all_comments': C
 
 
 class MerchantPage(webapp2.RequestHandler):
-    def __init__(self, title, description, opinion, logo, brand, clothing, image, request, response):
+    def __init__(self, title, description, opinion, logo, brand, clothing, image, clothing2, image2, clothing3, image3, request, response):
         merchList = [
         {'link': "/H&M", "id": "hm"},
         {'link': "/Aeropostale", "id": "aero"},
@@ -57,7 +57,7 @@ class MerchantPage(webapp2.RequestHandler):
         {'link': '/UrbanOutFitters', 'id': 'urb'},
         {'link': '/Zara', 'id': 'zara'},
         ]
-        self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'all_comments': Comment.query().fetch(), 'merchList': merchList, 'clothing': clothing, "image": image }
+        self.title_dict ={'title': title, "desc": description, 'opinion': opinion, 'logo': logo, 'all_comments': Comment.query().fetch(), 'merchList': merchList, 'clothing': clothing, "image": image, 'clothing2': clothing2, 'image2': image2, 'clothing3': clothing3, "image3": image3}
         self.brand = brand
         self.initialize(request, response)
     def get(self):
@@ -229,7 +229,11 @@ class HMPage(MerchantPage):
         'H&M',\
         "http://www2.hm.com/en_us/productpage.0631735001.html",\
         "http://lp2.hm.com/hmgoepprod?set=source[/8a/5c/8a5c6a561d73203b2b0b8c6faf5018583a34ccb9.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],hmver[1]&call=url[file:/product/style]",\
-         request, response)
+        "http://www2.hm.com/en_us/productpage.0441386004.html",\
+        "http://lp2.hm.com/hmgoepprod?set=source[/2b/3f/2b3f3e5934822ca955e4db065d8edf3e8961e167.jpg],origin[dam],category[men_trousers_joggers],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/fullscreen]",\
+        "http://www2.hm.com/en_us/productpage.0619580006.html",\
+        "http://lp2.hm.com/hmgoepprod?set=source[/4c/90/4c905aa7a0940191666f01bfa64b9458e41f298d.jpg],origin[dam],category[ladies_shorts],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/fullscreen]",\
+        request, response)
 
 class HollPage(MerchantPage):
     def __init__(self,request,response):
