@@ -178,7 +178,10 @@ class ExpressPage(MerchantPage):
         'Under CEO David Komberg, Express has expanded to encompass 641 factions as of January 2015. The catalog of clothing here mostly pertains to young women and men.',\
         'This is where our opinion will go',\
         'images/express.png',\
-        'Express', request, response)
+        'Express',\
+        "https://www.express.com/clothing/men/double-knit-exp-hem-hoodie/pro/05327570/color/BLACK",\
+        "https://images.express.com/is/image/expressfashion/0022_05327570_0058_f028?cache=on&wid=960&fmt=jpeg&qlt=85,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",\
+         request, response)
 
 class F21Page(MerchantPage):
     def __init__(self,request,response):
@@ -187,7 +190,10 @@ class F21Page(MerchantPage):
         'Forever 21 bravely embraces the quirkier and funkier nature of fashion while carefully treading the line between whats too weird and whats not. Those looking for a unique treat each visit to either their site or store will be pleasantly surprised to the plethora of tasteful accessories and apparel more so catered to young ladies.',\
         'This is where our opinion will go',\
         'images/f21.png',\
-        'Forever 21', request, response)
+        'Forever 21',\
+        "https://www.forever21.com/us/shop/catalog/Product/21MEN/mens-jackets-and-coats-trenches/2000205979?variantid=&recid=product6_rr-_-35;-_-2000205979-_-4408-_-5",\
+        "https://www.forever21.com/images/1_front_750/00205979-01.jpg",\
+         request, response)
 
 class GapPage(MerchantPage):
     def __init__(self,request,response):
@@ -196,7 +202,10 @@ class GapPage(MerchantPage):
         'Its headquarters located in San Fransisco, California, Gap is home to a wide variety of clothing. This all became possible through its co-founders Donald and Doris Fisher. Gap is home to many subsidiaries including Old Navy, Banana Republic and more.',\
         'This is where our opinion will go',\
         'images/gap.png',\
-        'Gap', request, response)
+        'Gap',\
+        "https://www.gap.com/browse/product.do?cid=1113995&pcid=17076&vid=1&pid=318933002",\
+        "https://www.gap.com/webcontent/0015/440/691/cn15440691.jpg",\
+         request, response)
 
 class HMPage(MerchantPage):
     def __init__(self,request,response):
@@ -229,7 +238,10 @@ class LuluPage(MerchantPage):
         'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
         'This is where our opinion will go',\
         'images/lulu.png',\
-        'LuluLemon', request, response)
+        'LuluLemon',\
+        "https://shop.lululemon.com/p/women-pants/Dance-Studio-Pant-III-R-MD/_/prod8250314?color=0151",\
+        "https://images.lululemon.com/is/image/lululemon/LW5AESR_0151_1?$image_carousel-lg$",\
+         request, response)
 
 class OldPage(MerchantPage):
     def __init__(self,request,response):
