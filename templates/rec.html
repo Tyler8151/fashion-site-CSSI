@@ -9,9 +9,12 @@
     <div id="routes">
       <div id="routespace">
       </div>
-      <form class="routechild" method = 'post' action='/log'>
-        <button id="loginout">Sign in/Join</button>
-      </form>
+      <a class="routechild" href='/log'>
+        <button id="logout">{{logout}}</button>
+      </a>
+      <a class="routechild" href='/log'>
+        <button id="loginout">{{user}}</button>
+      </a>
       <a class="routechild" href='/'>
         <button id="homepg">Home</button>
       </a>

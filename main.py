@@ -370,13 +370,14 @@ class ZaraPage(MerchantPage):
 class AboutPage(webapp2.RequestHandler):
     def get(self):
         home_template= jinja_current_directory.get_template('templates/about.html')
-        self.response.write(home_template.render())
+        self.response.write(home_template.render(homepage_data))
     def post(self):
         main_template= jinja_current_directory.get_template('templates/about.html')
         self.response.write(main_template.render())
 
 class ConPage(webapp2.RequestHandler):
     def get(self):
+
         con_template= jinja_current_directory.get_template('templates/contact.html')
         print("getting conpage")
         self.response.write(con_template.render())
@@ -388,11 +389,12 @@ class ConPage(webapp2.RequestHandler):
 
 class RecPage(webapp2.RequestHandler):
     def get(self):
+
         rec_template= jinja_current_directory.get_template('templates/rec.html')
         self.response.write(rec_template.render())
     def post(self):
         rec_template= jinja_current_directory.get_template('templates/rec.html')
-        self.response.write(rec_template.render())
+        self.response.write(rec_template.render(homepage_data))
 
 class SignUpHandler(webapp2.RequestHandler):
     def post(self):
@@ -409,6 +411,34 @@ class SignUpHandler(webapp2.RequestHandler):
         title_dict['logout'] = 'Log out'
 
         self.redirect('/')
+
+class MainPage(webapp2.RequestHandler):
+    def get(self):
+        # [START user_details]
+        user = users.get_current_user()
+        if user:
+            nickname = user.nickname()
+            logout_url = users.create_logout_url('/')
+            greeting = 'Welcome, {}! (<a href="{}">sign out</a>)'.format(
+                nickname, logout_url)
+        else:
+            login_url = users.create_login_url('/')
+            greeting = '<a href="{}">Sign in</a>'.format(login_url)
+        # [END user_details]
+        self.response.write(
+            '<html><body>{}</body></html>'.format(greeting))
+
+
+class AdminPage(webapp2.RequestHandler):
+    def get(self):
+        user = users.get_current_user()
+        if user:
+            if users.is_current_user_admin():
+                self.response.write('You are an administrator.')
+            else:
+                self.response.write('You are not an administrator.')
+        else:
+            self.response.write('You are not logged in.')
 
 
 
@@ -436,4 +466,6 @@ app = webapp2.WSGIApplication([
     ('/contact',ConPage),
     ('/recommend', RecPage),
     ('/signup', SignUpHandler),
+    ('/main', MainPage),
+    ('/admin', AdminPage)
 ], debug=True)

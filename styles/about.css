@@ -55,3 +55,14 @@ span {
   font-family: "Palatino", serif;
   font-size: 15px;
 }
+
+#logout {
+  padding: 20;
+  background: none;
+  border: none;
+  font-family: "Palatino", serif;
+  font-size: 15px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
