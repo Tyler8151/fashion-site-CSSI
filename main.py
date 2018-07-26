@@ -406,8 +406,8 @@ class SignUpHandler(webapp2.RequestHandler):
 
         user1.put()
 
-        title_dict['user'] = 'Hello, %s!' % (user1.real_name)
-        title_dict['logout'] = 'Log out'
+        homepage_data['user'] = 'Hello, %s!' % (user1.real_name)
+        homepage_data['logout'] = 'Log out'
 
         self.redirect('/')
 
@@ -428,7 +428,7 @@ class SignUpHandler(webapp2.RequestHandler):
 #         self.redirect('/profile')
 
 
- 
+
 
 
 
