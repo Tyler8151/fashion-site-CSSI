@@ -73,3 +73,12 @@ justify-content: center;
 
 
 }
+.yes{
+  text-align: center;
+  line-height: 20px;
+  width: 60%;
+  font-family: "Palatino", serif;
+  font-size: 17px;
+  margin: auto;
+
+}
