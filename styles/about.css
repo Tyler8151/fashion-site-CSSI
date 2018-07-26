@@ -47,14 +47,6 @@ span {
   flex: 10 10 auto;
 }
 
-#loginout {
-  flex: 1 1 auto;
-  padding: 0;
-  background: none;
-  border: none;
-  font-family: "Palatino", serif;
-  font-size: 15px;
-}
 
 #logout {
   padding: 20;

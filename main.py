@@ -150,7 +150,7 @@ class AmerEaglePage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
         'A M E R I C A N - E A G L E',\
-        'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
+        'American Eagle Outfitters is a leading global specialty retailer offering high-quality, on-trend clothing, accessories and personal care products at affordable prices under its American Eagle Outfitters and Aerie brands. The company operates more than 1,000 stores in the United States, Canada, Mexico, China and Hong Kong, and ships to 81 countries worldwide through its websites. American Eagle Outfitters and Aerie merchandise also is available at more than 200 international locations  operated by licensees in 25 countries.',\
         'This is where our opinion will go',\
         'images/americaneagle.svg.png',\
         'American Eagle',\
@@ -182,7 +182,7 @@ class BananaPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
         'B A N A N A - R E P U B L I C',\
-        'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
+        'Banana Republic offers versatile, contemporary classics, designed for today with style that endures. Through thoughtful design, they create clothing and accessories with detailed craftsmanship in luxurious materials. They dress men and women who see every day as full of possibilities and seek to make the most of every moment and opportunity. Banana Republic sees life a little differently. They take it all in and add to it. Banana Republic makes it their own and live with style.',\
         'This is where our opinion will go',\
         'images/banana.png',\
         'Banana Republic',\
@@ -246,7 +246,7 @@ class GapPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
         'G A P',\
-        'Its headquarters located in San Fransisco, California, Gap is home to a wide variety of clothing. This all became possible through its co-founders Donald and Doris Fisher. Gap is home to many subsidiaries including Old Navy, Banana Republic and more.',\
+        'Doris and Don Fisher opened the first Gap store in 1969 with a simple idea - to make it easier to find a pair of jeans and a commitment to do more. Over the last 46 years, the company has grown from a single store to a global fashion business with five brands - Gap, Banana Republic, Old Navy, Athleta and Intermix. Gap\'s clothes are available in 90 countries worldwide through 3,300 company-operated stores, almost 400 franchise stores, and e-commerce sites and is still growing.',\
         'This is where our opinion will go',\
         'images/gap.png',\
         'Gap',\
@@ -278,7 +278,7 @@ class HollPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
         'H O L L I S T E R',\
-        'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
+        'Hollister is an American lifestyle brand owned by Abercrombie & Fitch Co. The concept was originally designed to attract consumers aged 14-18, at a lower price point than the parent brand through its So Cal-inspired image and casual wear. Goods are available in-store and through the company\'s online store. In 2008 Piper Jaffray ranked it as the second most preferred clothing brand of US teens.',\
         'This is where our opinion will go',\
         'images/hollister.png',\
         'Hollister',\
@@ -294,7 +294,7 @@ class LuluPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
         'L U L U L E M O N',\
-        'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
+        'Our vision for our store was to create more than a place where people could get gear to sweat in, we wanted to create a community hub where people could learn and discuss the physical aspects of healthy living, mindfulness and living a life of possibility. It was also important for us to create real relationships with our guests and understand what they were passionate about, how they liked to sweat and help them celebrate their goals. Today, we do this in our stores around the globe.',\
         'This is where our opinion will go',\
         'images/lulu.png',\
         'LuluLemon',\
