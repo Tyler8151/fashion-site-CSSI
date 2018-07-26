@@ -29,6 +29,7 @@ merchList = [
 ]
 
 homepage_data={'merchList': merchList, 'user': 'Sign in/Join', 'logout': '' }
+profile_dict={'profile': "",'fav':""}
 
 User.query().fetch()
 
@@ -410,6 +411,23 @@ class SignUpHandler(webapp2.RequestHandler):
 
         self.redirect('/')
 
+class ProfilePage(webapp2.RequestHandler):
+    def get(self):
+        pro_template= jinja_current_directory.get_template('templates/profile.html')
+        self.response.write(pro_template.render(profile_dict))
+
+    def post(self):
+        profile=self.request.get('profile')
+        fav=self.request.get('fav')
+        profile_dict['profile']=profile
+        profile_dict['fav']=fav
+        # pro_template= jinja_current_directory.get_template('templates/profile.html')
+        #
+        # self.response.write(pro_template.render(profile_dict))
+
+        self.redirect('/profile')
+
+
 
 
 
@@ -436,4 +454,5 @@ app = webapp2.WSGIApplication([
     ('/contact',ConPage),
     ('/recommend', RecPage),
     ('/signup', SignUpHandler),
+    ('/profile',ProfilePage)
 ], debug=True)

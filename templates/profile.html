@@ -6,15 +6,22 @@
 <body>
   <h1>{{user}}</h1>
   <div class='images'>
-    <img class="pics" src={{profile}} alt="profile picture"></br>
+    <img class="pics" src="{{profile}}" alt="profile picture"></br>
   </div>
-  <input type='text' placeholder="enter image URL here..">
-  <input type='submit'>
+  <form method='post' action='/profile'>
+    <input type='text' name='profile' placeholder="enter image URL here..">
+    <input type='submit'>
+  </form>
   <div>
     <div id="bio">
-      
+
+    </div>
+
     <img class="pics" src={{fav}} alt="Favorite Item"></br>
+    <form method='post'>
     <input type='text' placeholder="enter image URL here..">
+
     <input type='submit'>
+  </form>
   </body>
   </html>
