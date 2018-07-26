@@ -233,6 +233,10 @@ class F21Page(MerchantPage):
         'Forever 21',\
         "https://www.forever21.com/us/shop/catalog/Product/21MEN/mens-jackets-and-coats-trenches/2000205979?variantid=&recid=product6_rr-_-35;-_-2000205979-_-4408-_-5",\
         "https://www.forever21.com/images/1_front_750/00205979-01.jpg",\
+        'https://www.forever21.com/us/shop/catalog/product/f21/top_blouses/2000272481',\
+        'https://www.forever21.com/images/1_front_750/00272481-03.jpg',\
+        'https://www.forever21.com/us/shop/catalog/product/f21/acc_hat/2000274206',\
+        'https://www.forever21.com/images/1_front_750/00274206-01.jpg',\
          request, response)
 
 class GapPage(MerchantPage):
@@ -245,6 +249,10 @@ class GapPage(MerchantPage):
         'Gap',\
         "https://www.gap.com/browse/product.do?cid=1113995&pcid=17076&vid=1&pid=318933002",\
         "https://www.gap.com/webcontent/0015/440/691/cn15440691.jpg",\
+        'https://www.gap.com/browse/product.do?cid=1113686&pcid=5156&vid=1&pid=228597082',\
+        'https://www.gap.com/webcontent/0015/354/028/cn15354028.jpg',\
+        'https://www.gap.com/browse/product.do?cid=1008446&pcid=13658&vid=1&pid=336991132',\
+        'https://www.gap.com/webcontent/0015/493/250/cn15493250.jpg',\
          request, response)
 
 class HMPage(MerchantPage):
@@ -273,6 +281,10 @@ class HollPage(MerchantPage):
         'Hollister',\
         "https://www.hollisterco.com/shop/us/p/-11904789?categoryId=12600&seq=03&faceout=model",\
         "https://anf.scene7.com/is/image/anf/hol_215416_03_model1?$product-ofp-hol-v1$",\
+        'https://www.hollisterco.com/shop/us/p/-11905427?categoryId=12556&seq=04',\
+        'https://anf.scene7.com/is/image/anf/hol_218468_04_prod1?$product-hol-v1$&wid=800&hei=1000',\
+        'https://www.hollisterco.com/shop/us/p/-11904528?categoryId=16402&seq=03',\
+        'https://anf.scene7.com/is/image/anf/hol_211227_03_prod1?$product-hol-v1$&wid=800&hei=1000',\
          request, response)
 
 class LuluPage(MerchantPage):
@@ -285,6 +297,10 @@ class LuluPage(MerchantPage):
         'LuluLemon',\
         "https://shop.lululemon.com/p/women-pants/Dance-Studio-Pant-III-R-MD/_/prod8250314?color=0151",\
         "https://images.lululemon.com/is/image/lululemon/LW5AESR_0151_1?$image_carousel-lg$",\
+        'https://shop.lululemon.com/p/women-scarves-gloves/Long-Weekend-Wrap/_/prod8980181?color=0002',\
+        'https://images.lululemon.com/is/image/lululemon/LW9BA2S_0002_1?$image_carousel-lg$',\
+        'https://shop.lululemon.com/p/men-ss-tops/Metal-Vent-Tech-SS-Henley/_/prod6750185?color=0572',\
+        'https://images.lululemon.com/is/image/lululemon/LM3AT9S_0572_1?$image_carousel-lg$',\
          request, response)
 
 class OldPage(MerchantPage):
@@ -297,6 +313,10 @@ class OldPage(MerchantPage):
         'Old Navy',\
         "https://oldnavy.gap.com/browse/product.do?cid=89219&pcid=20408&vid=1&pid=202834062",\
         "https://oldnavy.gap.com/webcontent/0014/955/819/cn14955819.jpg",\
+        'https://oldnavy.gap.com/browse/product.do?cid=1084902&pcid=10018&vid=1&pid=221779002',\
+        'https://oldnavy.gap.com/webcontent/0015/436/113/cn15436113.jpg',\
+        'https://www.gap.com/browse/product.do?cid=1113685&pcid=5225&vid=1&pid=306528032',\
+        'https://www.gap.com/webcontent/0015/517/758/cn15517758.jpg',\
          request, response)
 
 class UnPage(MerchantPage):
@@ -309,6 +329,10 @@ class UnPage(MerchantPage):
         'Uniqlo',\
         "https://www.uniqlo.com/us/en/men-denim-jogger-pants-405640.html?dwvar_405640_color=COL68&cgid=men-multibuy-pants-and-jeans#start=31&cgid=men-multibuy-pants-and-jeans",\
         "https://uniqlo.scene7.com/is/image/UNIQLO/goods_68_405640?$pdp-medium$",\
+        'https://www.uniqlo.com/us/en/women-ultra-stretch-jeans-409032.html?dwvar_409032_length=032&cgid=women-jeans#ultrastretch=&start=5&cgid=women-jeans',\
+        'https://uniqlo.scene7.com/is/image/UNIQLO/goods_00_409032?$prod$',\
+        'https://www.uniqlo.com/us/en/women-mercerized-cotton-french-sleeve-short-sleeve-t-shirt-410051.html?dwvar_410051_color=COL68&cgid=women-t-shirts-and-tops#start=5&cgid=women-t-shirts-and-tops',\
+        'https://uniqlo.scene7.com/is/image/UNIQLO/goods_68_410051?$prod$',\
          request, response)
 
 class UrbPage(MerchantPage):
@@ -321,6 +345,10 @@ class UrbPage(MerchantPage):
         'Urban OutFitters',\
         "https://www.urbanoutfitters.com/shop/bdg-core-denim-trucker-jacket-001?category=mens-jackets&color=092",\
         "https://images.urbanoutfitters.com/is/image/UrbanOutfitters/39763123_092_b?$xlarge$&hei=900&qlt=80&fit=constrain",\
+        'https://www.urbanoutfitters.com/shop/uo-colette-stretch-linen-mini-dress?category=dresses&color=049',\
+        'https://images.urbanoutfitters.com/is/image/UrbanOutfitters/45821824_049_b?$xlarge$&hei=900&qlt=80&fit=constrain',\
+        'https://www.urbanoutfitters.com/shop/bdg-corduroy-utility-mini-skirt?category=womens-utility&color=025',\
+        'https://images.urbanoutfitters.com/is/image/UrbanOutfitters/47254149_025_b?$xlarge$&hei=900&qlt=80&fit=constrain',\
          request, response)
 
 class ZaraPage(MerchantPage):
@@ -333,6 +361,10 @@ class ZaraPage(MerchantPage):
         'Zara',\
         "https://www.zara.com/us/en/mixed-ribbed-blouse-p07563246.html?v1=6778122&v2=1074623",\
         "https://static.zara.net/photos///2018/I/0/1/p/7563/246/800/2/w/1024/7563246800_1_1_1.jpg?ts=1532071894414",\
+        'https://www.zara.com/us/en/sweatshirt-with-pouch-pocket-p01701317.html?v1=7311520&v2=1079150',\
+        'https://static.zara.net/photos///2018/I/0/2/p/1701/317/401/6/w/1024/1701317401_1_1_1.jpg?ts=1531981903167',\
+        'https://www.zara.com/us/en/athletic-beige-leather-shoes-p12519302.html?v1=6453363&v2=1079370',\
+        'https://static.zara.net/photos///2018/I/1/2/p/2519/302/102/2/w/1024/2519302102_1_1_1.jpg?ts=1532016731283',\
          request, response)
 
 class AboutPage(webapp2.RequestHandler):
