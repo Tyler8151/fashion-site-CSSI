@@ -454,5 +454,5 @@ app = webapp2.WSGIApplication([
     ('/contact',ConPage),
     ('/recommend', RecPage),
     ('/signup', SignUpHandler),
-    ('/profile',ProfilePage)
+    # ('/profile',ProfilePage)
 ], debug=True)
