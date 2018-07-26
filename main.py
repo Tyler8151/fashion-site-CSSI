@@ -131,7 +131,7 @@ class AeroPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
         'A E R O P O S T A L E',\
-        'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
+        'Aeropostale is a specialty retailer of casual apparel and accessories, principally serving young women and men through its Aeropostale and Aeropostale Factory stores. We provide customers with a focused selection of high quality fashion and fashion basics at compelling values in an innovative and exciting store environment.',\
         'This is where our opinion will go',\
         'images/aeropostale.svg.png',\
         'Aeropostale',\
@@ -163,7 +163,7 @@ class AmerApparelPage(MerchantPage):
     def __init__(self, request, response):
         MerchantPage.__init__(self,\
         'A M E R I C A N - A P P A R E L',\
-        'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
+        'As on of the world\'s largest manufacturers of basic apparel, socks and legwear, American Apparel has a direct impact on styles globally. Not only does American Apparel bring quality basics to consumers, but also provides clothing that was both comfortable to wear and acted as the foundation for your personal style.',\
         'This is where our opinion will go',\
         'images/americanapparel.png',\
         'American Apparel',\
@@ -195,7 +195,7 @@ class BloomPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
         'B L O O M I N G D A L E S',\
-        "Although a bit on the pricier side, Bloomingdales expectations of quality apparel exceeds that of its many major competitors. Bloomingdales robust collection of jewelry, accessories, clothing, and handbags makes it a top retailer on many fashion enthusiasts radars. If your fashion standards only demand to be beaten, then Bloomingdales is your one-stop style shop.",\
+        'Although a bit on the pricier side, Bloomingdale\'s expectations of quality apparel exceeds that of its many major competitors. Bloomingdale\'s  robust collection of jewelry, accessories, clothing, and handbags makes it a top retailer on many fashion enthusiast\'s radars. If your fashion standards only demand to be beaten, then Bloomingdale\'s is your one-stop style shop.',\
         'This is where our opinion will go',\
         'images/bloom.png',\
         'Bloomingdales',\
@@ -211,7 +211,7 @@ class ExpressPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
         'E X P R E S S',\
-        'Under CEO David Komberg, Express has expanded to encompass 641 factions as of January 2015. The catalog of clothing here mostly pertains to young women and men.',\
+        'Express is one of the biggest specialty retail brands in the world, bringing of-the-minute style for every occasion. As the style source for fashion-forward young women and men, they offer classy apparel from first job interviews to weekend parties. They believe in living for the moment, dressing for the moment and having a strong individual style and that is evident in their wide selection of clothing.',\
         'This is where our opinion will go',\
         'images/express.png',\
         'Express',\
@@ -227,7 +227,7 @@ class F21Page(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
         'F O R E V E R - 2 1',\
-        'Forever 21 bravely embraces the quirkier and funkier nature of fashion while carefully treading the line between whats too weird and whats not. Those looking for a unique treat each visit to either their site or store will be pleasantly surprised to the plethora of tasteful accessories and apparel more so catered to young ladies.',\
+        'Forever 21 bravely embraces the quirkier and funkier nature of fashion while carefully treading the line between what\'s too weird and what\'s not. Those looking for a unique treat each visit to either their site or store will be pleasantly surprised by the plethora of tasteful accessories and apparel more so catered to young ladies.',\
         'This is where our opinion will go',\
         'images/f21.png',\
         'Forever 21',\
@@ -259,7 +259,7 @@ class HMPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
         'H & M',\
-        'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
+        'H&M\'s affordable and stylish clothing makes it a reliable international go-to for a fabulous selection of apparel for men and women alike. Their simple and often unique designs will arbitrarily separate their clothing from other competing retailers. But their many designers offer the widest variety of what H&M fans can make a personal treat. ',\
         'This is where our opinion will go',\
         'images/hm-logo.png',\
         'H&M',\
@@ -323,7 +323,7 @@ class UnPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
         'U N I Q L O',\
-        'Uniqlo embraces the simplicity, longevity, and quality of Japanese values - and that is evident in their wide selection of affordable apparel. Enthusiasts familiar with popular clothing lines such as H&M or Forever 21 will feel right at home with Uniqlos unique approach to subtlety.',\
+        'Uniqlo embraces the simplicity, longevity, and quality of Japanese values - and that is evident in their wide selection of affordable apparel. Enthusiasts familiar with popular clothing lines such as H&M or Forever 21 will feel right at home with Uniqlo\'s \'unique\' approach to subtlety.',\
         'This is where our opinion will go',\
         'images/uni.png',\
         'Uniqlo',\
@@ -339,7 +339,7 @@ class UrbPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
         'U R B A N O U T F I T T E R S',\
-        'Owned by Richard Hayne, urban outfitters headquarters is located in Philly, Pennsylvania. There are a total of 402 retail stores, and mostly selling what is known as "hipster clothing".',\
+        'Urban Outfitters is a lifestyle retailer dedicated to inspiring customers through a unique combination of product, creativity and cultural understanding. Urban Outfitters now operates over 200 stores in the United States, Canada and Europe, offering experiential retail environments and a well-curated mix of on-trend women\'s and men\'s clothes, from boho dresses, denim and graphics to shoes, hats, and backpacks, as well as beauty, intimates, swim and a collection of handpicked vintage clothing.',\
         'This is where our opinion will go',\
         'images/urb.png',\
         'Urban OutFitters',\
@@ -355,7 +355,7 @@ class ZaraPage(MerchantPage):
     def __init__(self,request,response):
         MerchantPage.__init__(self,\
         'Z A R A',\
-        'American Apparel was founded in 1989 by Dov Charney, and has grown ever since. Their last reported revenue graft showed the retailer grossed 604 million dollars in a year. However, their fall was soon met and now there are no retailer stores.',\
+        'Zara is known internationally for its diverse and tasteful fashion for both men and women. As one of the biggest fashion companies in the world, their wide variety of apparel ranges from funky jumpsuits to classy blazers and blouses. Most, if not, all of their clothing are on the pricier side but Zara\'s selection of quality apparel isn\'t one to disappoint.',\
         'This is where our opinion will go',\
         'images/zara.png',\
         'Zara',\
