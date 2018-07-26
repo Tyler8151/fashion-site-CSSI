@@ -69,9 +69,6 @@ h3 {
 .trend{
 display: flex;
 justify-content: center;
-
-
-
 }
 .yes{
   text-align: center;
@@ -81,4 +78,22 @@ justify-content: center;
   font-size: 17px;
   margin: auto;
 
+}
+
+.comments {
+  line-height: 10px;
+  padding-right: 50px;
+  padding-left: 50px;
+  width: 70%;
+  font-family: "Palatino", serif;
+  font-size: 15px;
+  margin: 10px auto;
+  border: solid;
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+#comment {
+  margin: 10px 10px;
+  display: flex;
+  justify-content: center;
 }

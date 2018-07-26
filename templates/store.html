@@ -21,24 +21,24 @@
   <p> These are some of the most trending items found on their website! If you'd like to purhcase any, click on an image to go straight to their page to buy!</p>
 </div> </br>
   <div class="trend">
-    <a  id="images" href={{clothing}}>
+    <a id="images" href={{clothing}}>
       <img width="222" height="333" src={{image}}>
     </a>
-    <a  id="images2" href={{clothing2}}>
+    <a id="images2" href={{clothing2}}>
       <img width="222" height="333" src={{image2}}>
     </a>
-    <a  id="images3" href={{clothing3}}>
+    <a id="images3" href={{clothing3}}>
       <img width="222" height="333" src={{image3}}>
     </a>
   </div>
-  <div class='coments'>
-  {% for comment in comments %}
-  <p>{{comment.content}}</p>
-  {% endfor %}
-  <form method='post'>
-    <input type="text" name="comment" id='comment' placeholder='leave a comment...'>
-    <input type='submit'>
-  </form>
+  <div class='comments'>
+    {% for comment in comments %}
+    <p>{{comment.content}}</p>
+    {% endfor %}
+    <form id="comment" method='post'>
+      <input type="text" name="comment" placeholder='leave a comment...'>
+      <input type='submit'>
+    </form>
   </div>
 </body>
 </html>
