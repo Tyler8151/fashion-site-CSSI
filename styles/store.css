@@ -65,3 +65,11 @@ h3 {
   height: 100px;
   width: 100px;
 }
+
+.trend{
+display: flex;
+justify-content: center;
+
+
+
+}
