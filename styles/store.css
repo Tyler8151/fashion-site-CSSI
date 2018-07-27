@@ -84,12 +84,12 @@ justify-content: center;
   line-height: 10px;
   padding-right: 50px;
   padding-left: 50px;
-  width: 70%;
+  width: 30%;
   font-family: "Palatino", serif;
   font-size: 15px;
   margin: 10px auto;
   border: solid;
-  border-color: rgba(0, 0, 0, 0.3);
+  border-color: rgba(0, 0, 0, 0.2);
 }
 
 #comment {
