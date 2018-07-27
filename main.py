@@ -28,7 +28,7 @@ merchList = [
 {'link': '/Zara', 'id': 'zara'},
 ]
 
-homepage_data={'merchList': merchList, 'user': 'Sign in/Join', 'logout': '' }
+homepage_data={'merchList': merchList, 'user': 'Sign in/Join', 'logout': '', }
 profile_dict={'profile': "",'fav':""}
 
 User.query().fetch()
@@ -100,6 +100,7 @@ class HomePage(webapp2.RequestHandler):
 
 class LogPage(webapp2.RequestHandler):
     def get(self):
+        homepage_data['logout'] = ''
         homepage_data['user'] = 'Sign in/Join'
         log_template= jinja_current_directory.get_template('templates/login-out.html')
         self.response.write(log_template.render())
